@@ -1,0 +1,37 @@
+.yt-nav {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+	box-shadow: 1px 1px 1px #888888;
+}
+
+.yt-nav-middle input{
+	width: 100%;
+}
+
+.yt-nav-middle {
+	flex:2;
+	display: flex;
+}
+
+.yt-nav-right {
+	flex: 2.5;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.yt-nav-right i{
+	margin-left: 7%;
+}
+
+.yt-nav-left {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+.yt-nav-left img{
+	margin-left: 10%;
+}
