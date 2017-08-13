@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import YtSideNav from './YtSideNav';
 
-class YtNavbar extends Component {
+class Header extends Component {
 
 	revealSideNav() {
 			$(".ytSideNav").toggle("slide");
@@ -37,4 +37,4 @@ class YtNavbar extends Component {
 	}
 }
 
-export default YtNavbar;
+export default Header;

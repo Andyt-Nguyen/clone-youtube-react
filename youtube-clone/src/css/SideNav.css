@@ -9,6 +9,7 @@
 	align-items: center;
 	padding-top: 5px;
 	padding-bottom: 5px;
+	color: black
 }
 
 .sidenav-i:hover {
@@ -33,4 +34,8 @@
 .side-title {
 	margin-left: 20px;
 	color: #6c6c6c;
+}
+
+.active {
+	color:red;
 }

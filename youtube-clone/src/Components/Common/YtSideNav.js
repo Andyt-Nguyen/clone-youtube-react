@@ -1,22 +1,38 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 import { Link, IndexLink } from 'react-router';
 
 class YtSideNav extends Component {
+
+	activeClass() {
+
+	}
+
 	render() {
 		return (
 			<div className="SideNav">
 
-				<IndexLink to="/" className="sidenav-i">
-					<i className="material-icons">&#xE88A;</i>
+				<IndexLink to="/"
+					style={{textDecoration:"none"}}
+					activeClassName="active"
+					className="sidenav-i"
+					>
+					<i className="material-icons red">&#xE88A;</i>
 					<h6>Home</h6>
 				</IndexLink>
 
-				<Link to="trending" className="sidenav-i">
-					<i className="material-icons">&#xE80E;</i>
+				<Link to="trending"
+					style={{textDecoration:"none"}}
+					activeClassName="active"
+					className="sidenav-i">
+						<i className="material-icons">&#xE80E;</i>
 					<h6>Trending</h6>
 				</Link>
 
-				<Link to="history" className="sidenav-i">
+				<Link to="history"
+					style={{textDecoration:"none"}}
+					activeClassName="active"
+					className="sidenav-i">
 					<i className="material-icons">&#xE88A;</i>
 					<h6>History</h6>
 				</Link>
