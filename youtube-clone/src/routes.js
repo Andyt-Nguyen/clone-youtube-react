@@ -8,7 +8,7 @@ import HistoryPage from './Components/History/HistoryPage'
 export default (
 	<Route path="/" component={App}>
 		<IndexRoute component={HomePage} />
-		<Route path="/trending" component={TrendingPage} />
+		<Route path="/trends" component={TrendingPage} />
 		<Route path="/history" component={HistoryPage} />
 	</Route>
 )

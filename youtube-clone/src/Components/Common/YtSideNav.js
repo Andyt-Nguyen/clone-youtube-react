@@ -1,71 +1,43 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 import { Link, IndexLink } from 'react-router';
+import Category from './Category';
 
-class YtSideNav extends Component {
+const YtSideNav = () => {
+	return (
+		<div className="SideNav">
+			<IndexLink to="/" style={{textDecoration:"none"}} activeClassName="active">
+				<Category icon={"home"} category={"Home"}/>
+			</IndexLink>
 
-	activeClass() {
+			<Link to="trends" style={{textDecoration:"none"}} activeClassName="active">
+				<Category icon={"whatshot"} category={"Trending"}/>
+			</Link>
 
-	}
+			<Link to="history" style={{textDecoration:"none"}} activeClassName="active" >
+				<Category icon={"restore"} category={"History"}/>
+			</Link>
 
-	render() {
-		return (
-			<div className="SideNav">
+			<hr />
 
-				<IndexLink to="/"
-					style={{textDecoration:"none"}}
-					activeClassName="active"
-					className="sidenav-i"
-					>
-					<i className="material-icons red">&#xE88A;</i>
-					<h6>Home</h6>
-				</IndexLink>
-
-				<Link to="trending"
-					style={{textDecoration:"none"}}
-					activeClassName="active"
-					className="sidenav-i">
-						<i className="material-icons">&#xE80E;</i>
-					<h6>Trending</h6>
-				</Link>
-
-				<Link to="history"
-					style={{textDecoration:"none"}}
-					activeClassName="active"
-					className="sidenav-i">
-					<i className="material-icons">&#xE88A;</i>
-					<h6>History</h6>
-				</Link>
-
-				<hr />
-
-				<div className="side-title">
-					<h6>Library</h6>
-				</div>
-
-				<div className="sidenav-i">
-					<i className="material-icons">replay</i>
-					<h6>Subscriptions</h6>
-				</div>
-
-				<div className="sidenav-i">
-					<i className="material-icons">access_time</i>
-					<h6>Watch Later</h6>
-				</div>
-
-				<div className="sidenav-i">
-					<i className="material-icons">favorite</i>
-					<h6>Favorites</h6>
-				</div>
-
-				<hr />
-
-				<div style={{display:"flex", justifyContent:"center"}}>
-					<button className="btn btn-primary text-center">Click To Login</button>
-				</div>
+			<div className="side-title">
+				<h6>Library</h6>
 			</div>
-		);
-	}
+
+			<Category icon={"music_video"} category={"Subscriptions"} />
+			<Category icon={"fitness_center"} category={"Sports"} />
+			<Category icon={"laptop_mac"} category={"Gaming"} />
+			<Category icon={"book"} category={"Education"} />
+			<Category icon={"tag_faces"} category={"Comedy"} />
+			<Category icon={"local_movies"} category={"Film And Animation"} />
+			<Category icon={"tag_faces"} category={"Comedy"} />
+
+			<hr />
+
+			<div style={{display:"flex", justifyContent:"center"}}>
+				<button className="btn btn-primary text-center">Login</button>
+			</div>
+		</div>
+	);
 }
 
 export default YtSideNav;

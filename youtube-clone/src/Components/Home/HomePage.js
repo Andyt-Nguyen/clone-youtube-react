@@ -61,11 +61,10 @@ class HomePage extends Component {
 	}
 
 	componentWillMount() {
-		this.getYoutubeInfo();
+		// this.getYoutubeInfo();
 	}
 
 	render() {
-		console.log(this.state);
 		return (
 			<div style={{border:"2px solid red", marginLeft:"5%", width: "1300px"}}>
 				<VideoList title={"Trending"} videos={this.state.trending} />

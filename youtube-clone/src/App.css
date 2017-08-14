@@ -4,6 +4,14 @@
 	font-family: "Roboto";
 }
 
+body {
+
+}
+
 .main {
 	display: flex;
+}
+
+.ytSideNav {
+	display: none;
 }

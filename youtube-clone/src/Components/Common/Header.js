@@ -10,7 +10,7 @@ class Header extends Component {
 
 	render() {
 		return (
-				<div style={{position:"static", width:"100%"}}>
+				<div className="header-container" style={{position:"static", width:"100%"}}>
 					<nav className="yt-nav container-fluid">
 						<div className="yt-nav-left">
 							<i
