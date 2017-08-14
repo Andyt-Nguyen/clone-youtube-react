@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import VideoList from './VideoList';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import VideoList from './VideoList';
+import * as youtubeActions from '../../actions/youtubeAction';
 
 class HomePage extends Component {
 	constructor() {
@@ -60,11 +63,19 @@ class HomePage extends Component {
 		});
 	}
 
+	sendDataToStore() {
+		setTimeout(() => {
+			this.props.actions.sendYoutubeData(this.state);
+		},2000);
+	}
+
 	componentWillMount() {
-		// this.getYoutubeInfo();
+		this.getYoutubeInfo();
+		this.sendDataToStore();
 	}
 
 	render() {
+		console.log(this.props);
 		return (
 			<div style={{border:"2px solid red", marginLeft:"5%", width: "1300px"}}>
 				<VideoList title={"Trending"} videos={this.state.trending} />
@@ -85,4 +96,16 @@ class HomePage extends Component {
 	}
 }
 
-export default HomePage;
+function mapStateToProps(state, ownProps) {
+	return {
+		videos: state.videos
+	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		actions: bindActionCreators(youtubeActions, dispatch)
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

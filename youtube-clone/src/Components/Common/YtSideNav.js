@@ -22,15 +22,12 @@ const YtSideNav = () => {
 			<div className="side-title">
 				<h6>Library</h6>
 			</div>
-
 			<Category icon={"music_video"} category={"Subscriptions"} />
 			<Category icon={"fitness_center"} category={"Sports"} />
 			<Category icon={"laptop_mac"} category={"Gaming"} />
 			<Category icon={"book"} category={"Education"} />
 			<Category icon={"tag_faces"} category={"Comedy"} />
 			<Category icon={"local_movies"} category={"Film And Animation"} />
-			<Category icon={"tag_faces"} category={"Comedy"} />
-
 			<hr />
 
 			<div style={{display:"flex", justifyContent:"center"}}>

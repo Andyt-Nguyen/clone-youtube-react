@@ -1,4 +1,5 @@
+import axios from 'axios';
 
-export function loadYoutubeApi(videos) {
-	return {type:"YOUTUBE_LOAD_SUCCESS", payload: videos};
+export function sendYoutubeData(videos) {
+	return {type:"YOUTUBE_SEND_SUCCESS", payload: videos};
 }
