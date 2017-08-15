@@ -1,6 +1,5 @@
 .bannerPic {
 	width:1100px;
-	background: green;
 	height: 190px;
 }
 
@@ -15,15 +14,39 @@
 	background: white;
 }
 
+.subpage-center {
+	width: 100%;
+}
+
 .pageItems {
 	margin: auto;
-	width: 50%;
+	width: 100%;
 	margin-top: 10px;
 	width: 90%;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .pageCol {
+	width: 50%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+}
+
+.titleOfVid {
+	color: black;
+	letter-spacing: .5px;
+	color: #167ac6;
+	padding-bottom: 5px;
+
+}
+
+.titleInfo {
+	font-size: 12px;
+	color: #767676;
+}
+
+.dateAndTitle {
+	padding-bottom: 5px;
 }

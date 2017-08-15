@@ -63,6 +63,11 @@ class HomePage extends Component {
 		});
 	}
 
+	getNine(category) {
+		let nine = category.filter( (a,i) => i < 9);
+		return nine;
+	}
+
 	sendDataToStore() {
 		setTimeout(() => {
 			this.props.actions.sendYoutubeData(this.state);
@@ -75,22 +80,29 @@ class HomePage extends Component {
 	}
 
 	render() {
-		console.log(this.props);
+		let {trending, comedy, education, music, gaming, sports, filmAnimation} = this.state;
+		let trends = this.getNine(trending);
+		let comedys = this.getNine(comedy);
+		let educations = this.getNine(education);
+		let musics = this.getNine(music);
+		let gamings = this.getNine(gaming);
+		let sportz = this.getNine(sports);
+		let filmAnimations = this.getNine(filmAnimation);
 		return (
 			<div style={{border:"2px solid red", marginLeft:"5%", width: "1300px"}}>
-				<VideoList title={"Trending"} videos={this.state.trending} />
+				<VideoList title={"Trending"} videos={trends} />
 				<hr />
-				<VideoList title={"Comedy"} videos={this.state.comedy} />
+				<VideoList title={"Comedy"} videos={comedys} />
 				<hr />
-				<VideoList title={"Education"} videos={this.state.education} />
+				<VideoList title={"Education"} videos={educations} />
 				<hr />
-				<VideoList title={"Music"} videos={this.state.music} />
+				<VideoList title={"Music"} videos={musics} />
 				<hr />
-				<VideoList title={"Gaming"} videos={this.state.gaming} />
+				<VideoList title={"Gaming"} videos={gamings} />
 				<hr />
-				<VideoList title={"Blogger"} videos={this.state.sports} />
+				<VideoList title={"Blogger"} videos={sportz} />
 				<hr />
-				<VideoList title={"Film & Animation"} videos={this.state.filmAnimation} />
+				<VideoList title={"Film & Animation"} videos={filmAnimations} />
 			</div>
 		);
 	}

@@ -1,23 +1,29 @@
-import React, { Component } from 'react';
+import React  from 'react';
 
-class PageItem extends Component {
-	render() {
-		return (
-			<div style={{paddingTop:"15px", width:"50%"}}>
-				<div style={{display:"flex"}}>
-					<div>
-						<img src="https://placehold.it/160" />
-					</div>
-					<div>
-						<h1>Title Video</h1>
-						<h3>Channel title</h3>
-						<h4>Views and Date</h4>
-						<h4>Description</h4>
+const PageItem = (props) => {
+	return (
+			<div className="pageCol">
+				<div style={{paddingTop:"20px", width:"100%"}}>
+					<div style={{display:"flex"}}>
+						<div>
+							<img src={props.thumbnail} width="250" height="150"/>
+						</div>
+						<div style={{marginLeft:"10px"}}>
+							<h1 className="titleOfVid">{props.title}</h1>
+							<div className="dateAndTitle">
+							<p className="titleInfo" style={{color:"#167ac6"}}>{props.channelTitle}</p>
+							<p className="titleInfo" style={{border:"2px solid green"}}>
+								<span>{props.views} {" "}</span>
+								<span style={{fontSize:"30px"}}>&middot;</span>
+								<span>{props.date}</span>
+							</p>
+							</div>
+							<p className="titleInfo">{props.description}</p>
+						</div>
 					</div>
 				</div>
 			</div>
-		)
-	}
+	);
 }
 
 export default PageItem;

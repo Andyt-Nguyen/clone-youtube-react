@@ -3,12 +3,22 @@ import { Route, IndexRoute } from 'react-router';
 import App from './App';
 import HomePage from './Components/Home/HomePage';
 import TrendingPage from './Components/Trending/TrendingPage';
-import HistoryPage from './Components/History/HistoryPage'
+import HistoryPage from './Components/History/HistoryPage';
+import ComedyPage from './Components/Comedy/ComedyPage';
+import FilmAnimPage from './Components/FilmAnim/FilmAnimPage';
+import GamingPage from './Components/Gaming/GamingPage';
+import SportsPage from './Components/Sports/SportsPage';
+import MusicPage from './Components/Music/MusicPage';
 
 export default (
 	<Route path="/" component={App}>
 		<IndexRoute component={HomePage} />
+		<Route path="/music" component={MusicPage}/>
 		<Route path="/trends" component={TrendingPage} />
 		<Route path="/history" component={HistoryPage} />
+		<Route path="/comedy" component={ComedyPage} />
+		<Route path="/film" component={FilmAnimPage} />
+		<Route path="/gaming" component={GamingPage} />
+		<Route path="/sports" component={SportsPage} />
 	</Route>
 )

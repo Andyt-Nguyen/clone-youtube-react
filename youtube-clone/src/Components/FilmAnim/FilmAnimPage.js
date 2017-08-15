@@ -4,11 +4,12 @@ import { bindActionCreators } from 'redux';
 import SubPageHeader from '../Page/SubPageHeader';
 import * as youtubeActions from '../../actions/youtubeAction';
 
-class TrendingPage extends Component {
+class FilmAnimPage extends Component {
 	render() {
 		return (
-			<div className="subpage-center">
-				<SubPageHeader bannerImage={"https://s23.postimg.org/gj40a18gb/music_Img.jpg"} categoryTitle={"Trending"} />
+			<div>
+			<SubPageHeader categoryTitle={"Trending"} />
+
 			</div>
 		);
 	}
@@ -17,7 +18,7 @@ class TrendingPage extends Component {
 function mapStateToProps(state, ownProps) {
 	return {
 	videos: state.videos
-	};
+};
 }
 
 function mapDispatchToProps(dispatch) {
@@ -26,4 +27,4 @@ function mapDispatchToProps(dispatch) {
 	};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TrendingPage);
+export default connect(mapStateToProps, mapDispatchToProps)(FilmAnimPage);
