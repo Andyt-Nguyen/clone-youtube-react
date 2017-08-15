@@ -9,6 +9,7 @@ import './index.css';
 import "./css/Header.css";
 import "./css/SideNav.css";
 import "./css/pageView.css"
+import "./css/home.css"
 import registerServiceWorker from './registerServiceWorker';
 
 const store = configureStore();

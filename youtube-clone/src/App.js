@@ -5,15 +5,18 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
-				<Header />
+				<div className="nav"><Header /></div>
 				<div className="main">
 					<div className="ytSideNav">
 						<YtSideNav />
 					</div>
+					<div className="body">
 					{this.props.children}
+					</div>
 				</div>
       </div>
     );

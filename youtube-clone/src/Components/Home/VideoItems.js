@@ -12,7 +12,7 @@ class VideoItems extends Component {
 			return fiveWords.join(" ");
 		}
 	}
-	
+
 	render() {
 		let { snippet, statistics } = this.props;
 		let theWords = this.fiveWords(snippet.title);
@@ -23,7 +23,7 @@ class VideoItems extends Component {
 				<div style={{padding:"20px"}}>
 					<img
 						src={snippet.thumbnails.high.url}
-						height="112"
+						height="122"
 						width='200'/>
 					<div style={{display:'flex', flexWrap:'wrap', width:'200px'}}>
 						<p style={{fontFamily:"Roboto", fontWeight:'bold'}}>{theWords}</p>

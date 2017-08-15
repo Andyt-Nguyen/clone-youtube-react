@@ -38,3 +38,9 @@
 .yt-nav-left img{
 	margin-left: 10%;
 }
+
+.nav {
+	position: fixed;
+	width: 100%;
+	z-index: 50;
+}

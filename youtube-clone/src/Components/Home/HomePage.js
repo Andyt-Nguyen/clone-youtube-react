@@ -89,7 +89,7 @@ class HomePage extends Component {
 		let sportz = this.getNine(sports);
 		let filmAnimations = this.getNine(filmAnimation);
 		return (
-			<div style={{border:"2px solid red", marginLeft:"5%", width: "1300px"}}>
+			<div className="videoListContainer">
 				<VideoList title={"Trending"} videos={trends} />
 				<hr />
 				<VideoList title={"Comedy"} videos={comedys} />
