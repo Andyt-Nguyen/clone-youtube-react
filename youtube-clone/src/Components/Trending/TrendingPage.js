@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import SubPageHeader from '../Page/SubPageHeader';
+import SearchLayout from '../Page/SearchLayout';
 import * as youtubeActions from '../../actions/youtubeAction';
 
 class TrendingPage extends Component {
 	render() {
 		return (
-			<div className="subpage-center">
-				<SubPageHeader bannerImage={"https://s23.postimg.org/gj40a18gb/music_Img.jpg"} categoryTitle={"Trending"} />
+			<div>
+				<SearchLayout />
 			</div>
 		);
 	}

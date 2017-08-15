@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { browserHistory } from 'react-router';
 import VideoList from './VideoList';
 import * as youtubeActions from '../../actions/youtubeAction';
 
@@ -63,20 +64,24 @@ class HomePage extends Component {
 		});
 	}
 
-	getNine(category) {
-		let nine = category.filter( (a,i) => i < 9);
-		return nine;
-	}
-
 	sendDataToStore() {
 		setTimeout(() => {
 			this.props.actions.sendYoutubeData(this.state);
 		},2000);
 	}
 
-	componentWillMount() {
-		this.getYoutubeInfo();
-		this.sendDataToStore();
+	getNine(category) {
+		let nine = category.filter( (a,i) => i < 9);
+		return nine;
+	}
+
+	goNavigation(str) {
+		browserHistory.push(str);
+	}
+
+	componentDidMount() {
+		// this.getYoutubeInfo();
+		// this.sendDataToStore();
 	}
 
 	render() {
@@ -90,19 +95,19 @@ class HomePage extends Component {
 		let filmAnimations = this.getNine(filmAnimation);
 		return (
 			<div className="videoListContainer">
-				<VideoList title={"Trending"} videos={trends} />
+				<VideoList title={"Trending"} videos={trends} navigate={this.goNavigation.bind(this)} link={'/trends'} />
 				<hr />
-				<VideoList title={"Comedy"} videos={comedys} />
+				<VideoList title={"Comedy"} videos={comedys} navigate={this.goNavigation.bind(this)} link={'/comedy'}/>
 				<hr />
-				<VideoList title={"Education"} videos={educations} />
+				<VideoList title={"Education"} videos={educations} navigate={this.goNavigation.bind(this)} link={'/education'}/>
 				<hr />
-				<VideoList title={"Music"} videos={musics} />
+				<VideoList title={"Music"} videos={musics} navigate={this.goNavigation.bind(this)} link={'/music'}/>
 				<hr />
-				<VideoList title={"Gaming"} videos={gamings} />
+				<VideoList title={"Gaming"} videos={gamings} navigate={this.goNavigation.bind(this)} link={'/games'}/>
 				<hr />
-				<VideoList title={"Blogger"} videos={sportz} />
+				<VideoList title={"Sports"} videos={sportz} navigate={this.goNavigation.bind(this)} link={'/sports'}/>
 				<hr />
-				<VideoList title={"Film & Animation"} videos={filmAnimations} />
+				<VideoList title={"Film & Animation"} videos={filmAnimations} navigate={this.goNavigation.bind(this)} link={'/film'}/>
 			</div>
 		);
 	}

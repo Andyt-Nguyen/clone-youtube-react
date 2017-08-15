@@ -4,23 +4,13 @@ import { bindActionCreators } from 'redux';
 import SubPageHeader from '../Page/SubPageHeader';
 import PageItem from '../Page/PageItem';
 import * as youtubeActions from '../../actions/youtubeAction';
-import { convertDate, convertViews } from '../../resusableFxns.js';
+import { convertDate, convertViews, limitDescription } from '../../resusableFxns';
 
 class MusicPage extends Component {
 
-	limitDescription(str) {
-		str = str.split("");
-		if(str.length >= 112) {
-			let theTwenty = str.filter( (a,i) => i <= 112);
-			return theTwenty.join("")+"...";
-		} else {
-			return str.join("");
-		}
-	}
-
 	render() {
 		let pageItems = this.props.videos.music.map( (a,i) => {
-			let desc = this.limitDescription(a.snippet.description);
+			let desc = limitDescription(a.snippet.description);
 
 			return (
 					<PageItem

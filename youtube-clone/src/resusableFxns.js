@@ -39,3 +39,13 @@ export function convertViews(str) {
 		newDate.shift();
 		return newDate.join(" ");
 }
+
+export function limitDescription(str) {
+		str = str.split("");
+		if(str.length >= 112) {
+			let theTwenty = str.filter( (a,i) => i <= 112);
+			return theTwenty.join("")+"...";
+		} else {
+			return str.join("");
+		}
+	}

@@ -9,6 +9,7 @@ import FilmAnimPage from './Components/FilmAnim/FilmAnimPage';
 import GamingPage from './Components/Gaming/GamingPage';
 import SportsPage from './Components/Sports/SportsPage';
 import MusicPage from './Components/Music/MusicPage';
+import EducationPage from './Components/Education/EducationPage';
 
 export default (
 	<Route path="/" component={App}>
@@ -20,5 +21,6 @@ export default (
 		<Route path="/film" component={FilmAnimPage} />
 		<Route path="/gaming" component={GamingPage} />
 		<Route path="/sports" component={SportsPage} />
+		<Route path="/education" component={EducationPage} />
 	</Route>
 )
