@@ -4,12 +4,15 @@ import { connect } from 'react-redux';
 import SearchLayout from '../Page/SearchLayout';
 
 class SearchQuery extends Component {
+
 	constructor() {
 		super();
 		this.state = {
-			searchedResults: []
+			searchedResults: [],
+			videos: []
 		}
 	}
+
 	searchApi() {
 		const url = `https://www.googleapis.com/youtube/v3/search`;
 		const key = `AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ`
@@ -20,28 +23,45 @@ class SearchQuery extends Component {
 			params: {
 				key,
 				part:"snippet",
-				maxResults:10,
+				maxResults:3,
 				order:"relevance",
-				q:"Bruno Mars",
+				q: this.props.queryString.query,
 				safeSearch: "moderate",
 				type:"video",
 			}
 		});
 
+		let getStats = (id) => axios({
+			method: "GET",
+			url: `https://www.googleapis.com/youtube/v3/videos`,
+			params: {
+				key,
+				part: "statistics, snippet",
+				id
+			}
+		});
+
 		return promise.then(res => {
 			this.setState({searchedResults:res.data});
+			let videoIds = this.state.searchedResults.items.map(a => a.id.videoId);
+			videoIds = videoIds.join(",")
+			return getStats(videoIds);
+		}).then(res => {
+			const videos = res.data;
+			this.setState({videos});
 		});
 	}
 
 	componentWillMount() {
-		// this.searchApi();
+		this.searchApi();
 	}
 
 	render() {
+		console.log(this.state);
 		return (
 			<div>
 				<h1>Search Page</h1>
-				<SearchLayout videos={this.props.videos.trending} />
+
 			</div>
 		);
 	}
@@ -54,3 +74,4 @@ function mapStateToProps(state, ownProps) {
 }
 
 export default connect(mapStateToProps)(SearchQuery);
+// <SearchLayout videos={this.state.searchedResults} />

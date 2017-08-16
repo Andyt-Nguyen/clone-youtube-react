@@ -30,8 +30,8 @@ class HomePage extends Component {
 				key,
 				part: "id, contentDetails, snippet, statistics",
 				chart: 'mostPopular',
-				maxResults: 9,
-				videoCategoryId,
+				maxResults: 1,
+				videoCategoryId
 			}
 		});
 		return promise(0).then( res => {
