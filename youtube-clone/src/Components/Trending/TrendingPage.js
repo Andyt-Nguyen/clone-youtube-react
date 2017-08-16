@@ -5,10 +5,11 @@ import SearchLayout from '../Page/SearchLayout';
 import * as youtubeActions from '../../actions/youtubeAction';
 
 class TrendingPage extends Component {
+
 	render() {
 		return (
 			<div>
-				<SearchLayout />
+				<SearchLayout videos={this.props.videos.trending} />
 			</div>
 		);
 	}

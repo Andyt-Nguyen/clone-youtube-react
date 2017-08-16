@@ -40,12 +40,14 @@ export function convertViews(str) {
 		return newDate.join(" ");
 }
 
-export function limitDescription(str) {
+export function limitDescription(str, num) {
 		str = str.split("");
-		if(str.length >= 112) {
-			let theTwenty = str.filter( (a,i) => i <= 112);
+		if(str.length >= num) {
+			let theTwenty = str.filter( (a,i) => i <= num);
 			return theTwenty.join("")+"...";
 		} else {
 			return str.join("");
 		}
 	}
+
+//original number = 112

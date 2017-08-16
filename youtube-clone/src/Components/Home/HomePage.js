@@ -9,7 +9,7 @@ import * as youtubeActions from '../../actions/youtubeAction';
 class HomePage extends Component {
 	constructor() {
 		super();
-		this.state ={
+		this.state = {
 			trending: [],
 			education: [],
 			music: [],
@@ -21,17 +21,17 @@ class HomePage extends Component {
 	}
 
 	getYoutubeInfo() {
-		const baseUrl = "https://www.googleapis.com/youtube/v3/videos";
+		const url = "https://www.googleapis.com/youtube/v3/videos";
 		const key = "AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ";
 		let promise = (videoCategoryId) => axios({
 			method: "GET",
-			url: baseUrl,
+			url,
 			params: {
 				key,
 				part: "id, contentDetails, snippet, statistics",
 				chart: 'mostPopular',
 				maxResults: 9,
-				videoCategoryId
+				videoCategoryId,
 			}
 		});
 		return promise(0).then( res => {

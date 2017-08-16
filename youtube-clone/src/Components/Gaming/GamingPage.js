@@ -9,19 +9,16 @@ import { convertDate, convertViews, limitDescription } from '../../resusableFxns
 class GamingPage extends Component {
 
 	render() {
-		let pageItems = this.props.videos.gaming.map( (a,i) => {
-			let desc = limitDescription(a.snippet.description);
-
-			return (
-					<PageItem
-						key={i}
-						title={a.snippet.title}
-						channelTitle={a.snippet.channelTitle}
-						views={convertViews(a.statistics.viewCount)}
-						date={convertDate(a.snippet.publishedAt)}
-						description={desc}
-						thumbnail={a.snippet.thumbnails.high.url} />
-		)});
+		let pageItems = this.props.videos.gaming.map( (a,i) =>
+			<PageItem
+				key={i}
+				title={a.snippet.title}
+				channelTitle={a.snippet.channelTitle}
+				views={convertViews(a.statistics.viewCount)}
+				date={convertDate(a.snippet.publishedAt)}
+				description={limitDescription(a.snippet.description, 112)}
+				thumbnail={a.snippet.thumbnails.high.url} />
+		);
 
 		return (
 			<div className="container">
