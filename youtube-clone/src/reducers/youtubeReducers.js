@@ -1,7 +1,7 @@
 
 export default function youtubeReducer(state=[], action) {
 	switch (action.type) {
-		case "YOUTUBE_SEND_SUCCESS":
+		case "GET_YOUTUBE_VIDEOS":
 			return action.payload;
 
 		default:

@@ -31,7 +31,7 @@ class SearchQuery extends Component {
 			}
 		});
 
-		let getStats = (id) => axios({
+		const getStats = (id) => axios({
 			method: "GET",
 			url: `https://www.googleapis.com/youtube/v3/videos`,
 			params: {

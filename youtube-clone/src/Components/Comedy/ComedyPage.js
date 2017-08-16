@@ -41,10 +41,4 @@ function mapStateToProps(state, ownProps) {
 	};
 }
 
-function mapDispatchToProps(dispatch) {
-	return {
-		actions: bindActionCreators(youtubeActions, dispatch)
-	};
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ComedyPage);
+export default connect(mapStateToProps)(ComedyPage);

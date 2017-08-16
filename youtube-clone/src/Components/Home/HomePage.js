@@ -64,12 +64,6 @@ class HomePage extends Component {
 		});
 	}
 
-	sendDataToStore() {
-		setTimeout(() => {
-			this.props.actions.sendYoutubeData(this.state);
-		},2000);
-	}
-
 	getNine(category) {
 		let nine = category.filter( (a,i) => i < 9);
 		return nine;
@@ -80,11 +74,12 @@ class HomePage extends Component {
 	}
 
 	componentDidMount() {
-		// this.getYoutubeInfo();
-		// this.sendDataToStore();
+		this.getYoutubeInfo();
 	}
 
+
 	render() {
+
 		let {trending, comedy, education, music, gaming, sports, filmAnimation} = this.state;
 		let trends = this.getNine(trending);
 		let comedys = this.getNine(comedy);
@@ -119,10 +114,4 @@ function mapStateToProps(state, ownProps) {
 	}
 }
 
-function mapDispatchToProps(dispatch) {
-	return {
-		actions: bindActionCreators(youtubeActions, dispatch)
-	}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps)(HomePage);

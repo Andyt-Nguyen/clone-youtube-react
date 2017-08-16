@@ -11,8 +11,10 @@ import "./css/SideNav.css";
 import "./css/pageView.css"
 import "./css/home.css"
 import registerServiceWorker from './registerServiceWorker';
+import { getYoutubeInfo } from './actions/youtubeAction';
 
 const store = configureStore();
+store.dispatch(getYoutubeInfo());
 
 render (
 	<Provider store={store}>
