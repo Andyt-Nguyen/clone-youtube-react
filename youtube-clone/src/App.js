@@ -11,11 +11,9 @@ class App extends Component {
       <div className="App">
 				<div className="nav"><Header /></div>
 				<div className="main">
-					<div className="ytSideNav">
 						<YtSideNav />
-					</div>
 					<div className="body">
-					{this.props.children}
+						{this.props.children}
 					</div>
 				</div>
       </div>

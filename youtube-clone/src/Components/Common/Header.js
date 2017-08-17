@@ -39,7 +39,10 @@ class Header extends Component {
 								onClick={this.revealSideNav.bind(this)}
 								className="material-icons"
 								style={{cursor:"pointer"}}>&#xE8EE;</i>
-							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/YouTube_logo_2015.svg/1200px-YouTube_logo_2015.svg.png" width="70px"/>
+							<img className="youtubeLogo" src="https://s22.postimg.org/ew0lnw0pd/youtube_Logo.png" width="70px"/>
+							<div className="playBtnPic">
+								<img src="https://s18.postimg.org/wsh1d8pa1/youtube_Icon.png" width="40px" />
+							</div>
 						</div>
 
 						<form onSubmit={this.sendQuery.bind(this)} className="yt-nav-middle">

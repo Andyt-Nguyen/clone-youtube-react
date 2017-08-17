@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { apiKey } from '../../config';
+import { apiKey } from '../config';
 
 export function sendYoutubeData(videos) {
 	return {type:"GET_YOUTUBE_VIDEOS", payload: videos};

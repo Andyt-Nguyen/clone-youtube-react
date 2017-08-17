@@ -1,3 +1,7 @@
+.playBtnPic {
+	display: none;
+}
+
 .header-container {
 	background: white
 }
@@ -39,8 +43,20 @@
 	margin-left: 10%;
 }
 
-/*.nav {
+/*.header {
 	position: fixed;
 	width: 100%;
 	z-index: 50;
 }*/
+
+@media only screen and (max-width: 650px){
+	.youtubeLogo {
+		display: none;
+	}
+
+	.playBtnPic{
+		display: block;
+		padding-right:10px;
+		padding-top:5px;
+	}
+}
