@@ -20,7 +20,7 @@ export function getYoutubeInfo() {
 			key,
 			part: "id, contentDetails, snippet, statistics",
 			chart: 'mostPopular',
-			maxResults: 3,
+			maxResults: 1,
 			videoCategoryId
 		}
 	});
@@ -52,7 +52,7 @@ export function getYoutubeInfo() {
 		}).then( res => {
 			const filmAnimation = res.data.items;
 			youtubeVideos.filmAnimation = filmAnimation;
-			console.log(youtubeVideos);
+			// console.log(youtubeVideos);
 			dispatch(sendYoutubeData(youtubeVideos));
 		});
 	}

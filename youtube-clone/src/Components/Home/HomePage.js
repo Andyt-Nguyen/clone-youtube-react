@@ -74,7 +74,7 @@ class HomePage extends Component {
 	}
 
 	componentDidMount() {
-		this.getYoutubeInfo();
+		// this.getYoutubeInfo();
 	}
 
 

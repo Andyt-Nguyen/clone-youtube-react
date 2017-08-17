@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import SearchLayout from '../Page/SearchLayout';
 
-class SearchQuery extends Component {
+class SearchQuery extends PureComponent {
 
 	constructor() {
 		super();
@@ -15,7 +15,7 @@ class SearchQuery extends Component {
 
 	searchApi() {
 		const url = `https://www.googleapis.com/youtube/v3/search`;
-		const key = `AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ`
+		const key = `AIzaSyB44dw8hEXAdMcWdhZhfQUxuY0kN4rwJlk`
 
 		let promise = axios({
 			method:"GET",
@@ -23,7 +23,7 @@ class SearchQuery extends Component {
 			params: {
 				key,
 				part:"snippet",
-				maxResults:3,
+				maxResults:2,
 				order:"relevance",
 				q: this.props.queryString.query,
 				safeSearch: "moderate",
@@ -47,21 +47,21 @@ class SearchQuery extends Component {
 			videoIds = videoIds.join(",")
 			return getStats(videoIds);
 		}).then(res => {
-			const videos = res.data;
+			const videos = res.data.items;
 			this.setState({videos});
 		});
 	}
 
 	componentWillMount() {
-		this.searchApi();
+		// this.searchApi();
 	}
 
+
 	render() {
-		console.log(this.state);
+		console.log(this.state.videos);
 		return (
 			<div>
-				<h1>Search Page</h1>
-
+				<SearchLayout videos={this.state.videos} />
 			</div>
 		);
 	}
@@ -74,4 +74,3 @@ function mapStateToProps(state, ownProps) {
 }
 
 export default connect(mapStateToProps)(SearchQuery);
-// <SearchLayout videos={this.state.searchedResults} />

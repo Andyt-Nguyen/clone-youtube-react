@@ -1,0 +1,36 @@
+.titleLikesViews {
+	display:flex;
+}
+
+.titleLikesViewsContainer {
+	display:flex;
+	/*border:2px solid red;*/
+	width:100%;
+}
+
+.videoPlay {
+	width: 100%;
+	background: black;
+	display:flex;
+	justify-content:center
+}
+
+.positioningTitleLikes {
+	/*border: 2px solid purple;*/
+	width: 100%;
+	display: flex;
+	justify-content: space-between
+}
+
+.positionLikes {
+	/*border: 2px solid green;*/
+	display: flex;
+	justify-content:space-around;
+	align-items:flex-start;
+	width: 46%;
+}
+
+.iconsColorFonts {
+	font-size: 20px;
+	color: #707070;
+}

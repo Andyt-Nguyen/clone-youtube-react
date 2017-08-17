@@ -11,6 +11,7 @@ import SportsPage from './Components/Sports/SportsPage';
 import MusicPage from './Components/Music/MusicPage';
 import EducationPage from './Components/Education/EducationPage';
 import SearchQuery from './Components/Search/SearchQuery';
+import VideoPage from './Components/Video/VideoPage';
 
 export default (
 	<Route path="/" component={App}>
@@ -24,5 +25,6 @@ export default (
 		<Route path="/sports" component={SportsPage} />
 		<Route path="/education" component={EducationPage} />
 		<Route path="/search" component={SearchQuery} />
+		<Route path="/video" component={VideoPage}/>
 	</Route>
 )
