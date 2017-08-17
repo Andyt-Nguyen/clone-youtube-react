@@ -22,7 +22,7 @@ class Header extends Component {
 
 	sendQuery(e) {
 		e.preventDefault();
-		this.props.action.sendQuery(this.state);
+		this.props.action.searchQuery(this.state);
 		browserHistory.push("/search");
 	}
 

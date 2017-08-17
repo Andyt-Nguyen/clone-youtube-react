@@ -1,4 +1,9 @@
-let arrayOfStrings = ["Hey","What","Up","Yo"];
+let kingKong;
 
-arrayOfStrings = arrayOfStrings.join(",");
-console.log(arrayOfStrings);
+function nameThatKong(name) {
+	kingKong = name;
+	return kingKong;
+}
+
+nameThatKong("Jamie");
+console.log(kingKong);

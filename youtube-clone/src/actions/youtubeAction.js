@@ -25,9 +25,9 @@ export function getYoutubeInfo() {
 		}
 	});
 	return dispatch => {
-		 	promise(0).then( res => {
-				const trending = res.data.items;
-				youtubeVideos.trending = trending;
+	 	promise(0).then( res => {
+			const trending = res.data.items;
+			youtubeVideos.trending = trending;
 			return promise(10)
 		}).then(res => {
 			const music = res.data.items;
@@ -56,4 +56,48 @@ export function getYoutubeInfo() {
 			dispatch(sendYoutubeData(youtubeVideos));
 		});
 	}
+}
+
+
+export function searchQuery(query) {
+	let searchedVideo;
+	const url = `https://www.googleapis.com/youtube/v3/search`;
+	const key = `AIzaSyB44dw8hEXAdMcWdhZhfQUxuY0kN4rwJlk`;
+
+	let promise = axios({
+		method:"GET",
+		url,
+		params: {
+			key,
+			part:"snippet",
+			maxResults:2,
+			order:"relevance",
+			q: query,
+			safeSearch: "moderate",
+			type:"video",
+		}
+	});
+
+	const getStats = (id) => axios({
+		method: "GET",
+		url: `https://www.googleapis.com/youtube/v3/videos`,
+		params: {
+			key,
+			part: "statistics, snippet",
+			id
+		}
+	});
+
+		return dispatch => {
+			return promise.then(res => {
+				let ids = res.data;
+				let videoIds = ids.items.map(a => a.id.videoId);
+				videoIds = videoIds.join(",")
+				return getStats(videoIds);
+			}).then(res => {
+				const videos = res.data.items;
+				searchedVideo = videos;
+				dispatch(sendQuery(searchedVideo))
+			});
+	};
 }
