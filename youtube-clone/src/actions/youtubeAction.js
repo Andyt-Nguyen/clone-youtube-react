@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { apiKey } from '../../config';
 
 export function sendYoutubeData(videos) {
 	return {type:"GET_YOUTUBE_VIDEOS", payload: videos};
@@ -12,7 +13,7 @@ export function sendQuery(query) {
 export function getYoutubeInfo() {
 	let youtubeVideos = {};
 	const url = "https://www.googleapis.com/youtube/v3/videos";
-	const key = "AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ";
+	const key = apiKey;
 	let promise = (videoCategoryId) => axios({
 		method: "GET",
 		url,
@@ -62,7 +63,7 @@ export function getYoutubeInfo() {
 export function searchQuery(query) {
 	let searchedVideo;
 	const url = `https://www.googleapis.com/youtube/v3/search`;
-	const key = `AIzaSyB44dw8hEXAdMcWdhZhfQUxuY0kN4rwJlk`;
+	const key = apiKey;
 
 	let promise = axios({
 		method:"GET",
