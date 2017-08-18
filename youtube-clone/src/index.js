@@ -14,7 +14,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { getYoutubeInfo } from './actions/youtubeAction';
 
 const store = configureStore();
-// store.dispatch(getYoutubeInfo());
+store.dispatch(getYoutubeInfo());
 
 render (
 	<Provider store={store}>

@@ -6,7 +6,7 @@ class SubPageHeader extends Component {
 	render() {
 		return (
 				<div className="card">
-					<img className="card-img-top" src={this.props.bannerImage} />
+					<img className="card-img-top" style={{width:"100%", margin:"auto"}} src={this.props.bannerImage} />
 					<div className="card-block">
 							<h1 className="page-title">{this.props.categoryTitle}</h1>
 							<div style={{display:"flex", justifyContent:"space-between", width:"13%"}}>

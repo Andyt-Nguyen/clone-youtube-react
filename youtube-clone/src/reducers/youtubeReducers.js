@@ -1,4 +1,3 @@
-
 export default function youtubeReducer(state=[], action) {
 	switch (action.type) {
 		case "GET_YOUTUBE_VIDEOS":

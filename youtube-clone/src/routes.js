@@ -25,6 +25,6 @@ export default (
 		<Route path="/sports" component={SportsPage} />
 		<Route path="/education" component={EducationPage} />
 		<Route path="/search" component={SearchQuery} />
-		<Route path="/video" component={VideoPage}/>
+		<Route path="/video" component={VideoPage} />
 	</Route>
 )

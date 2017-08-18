@@ -1,4 +1,5 @@
 import React  from 'react';
+import { convertDate, convertViews, limitDescription } from '../../resusableFxns';
 
 const PageItem = (props) => {
 	return (
@@ -6,19 +7,19 @@ const PageItem = (props) => {
 				<div style={{paddingTop:"20px", width:"100%"}}>
 					<div className="pageItemsContainer">
 						<div>
-							<img src={props.thumbnail} width="250" height="150"/>
+							<img src={props.snippet.thumbnails.high.url} width="250" height="150"/>
 						</div>
 						<div style={{marginLeft:"10px"}}>
-							<h1 className="titleOfVid">{props.title}</h1>
+							<h1 className="titleOfVid">{props.snippet.title}</h1>
 							<div className="dateAndTitle">
-							<p className="titleInfo" style={{color:"#167ac6"}}>{props.channelTitle}</p>
+							<p className="titleInfo" style={{color:"#167ac6"}}>{props.snippet.channelTitle}</p>
 							<p className="titleInfo">
-								{props.views} {" "}
+								{convertViews(props.statistics.viewCount)} {" "}
 								<span style={{fontWeight:"bold", fontSize:"15px"}}>&middot;</span> {" "}
-								{props.date}
+								{convertDate(props.statistics.publishedAt)}
 							</p>
 							</div>
-							<p className="titleInfo">{props.description}</p>
+							<p className="titleInfo">{limitDescription(props.snippet.description, 112)}</p>
 						</div>
 					</div>
 				</div>

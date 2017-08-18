@@ -44,7 +44,7 @@ export function limitDescription(str, num) {
 		str = str.split("");
 		if(str.length >= num) {
 			let theTwenty = str.filter( (a,i) => i <= num);
-			return theTwenty.join("")+"...";
+			return theTwenty.join("");
 		} else {
 			return str.join("");
 		}

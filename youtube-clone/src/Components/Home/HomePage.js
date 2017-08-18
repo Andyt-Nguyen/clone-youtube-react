@@ -64,6 +64,8 @@ class HomePage extends Component {
 		});
 	}
 
+	
+
 	getNine(category) {
 		let nine = category.filter( (a,i) => i < 9);
 		return nine;
@@ -79,7 +81,7 @@ class HomePage extends Component {
 
 
 	render() {
-
+		console.log(this.props);
 		let {trending, comedy, education, music, gaming, sports, filmAnimation} = this.state;
 		let trends = this.getNine(trending);
 		let comedys = this.getNine(comedy);
