@@ -5,6 +5,8 @@ import { bindActionCreators } from 'redux';
 import { browserHistory } from 'react-router';
 import VideoList from './VideoList';
 import * as youtubeActions from '../../actions/youtubeAction';
+import * as ytVideoAction from '../../actions/ytVideoAction';
+import * as ytChannelInfoAction from '../../actions/ytChannelInfoAction';
 
 class HomePage extends Component {
 	constructor() {
@@ -18,6 +20,7 @@ class HomePage extends Component {
 			sports: [],
 			filmAnimation: []
 		};
+		this.getVideoInfo = this.getVideoInfo.bind(this);
 	}
 
 	getYoutubeInfo() {
@@ -30,7 +33,7 @@ class HomePage extends Component {
 				key,
 				part: "id, contentDetails, snippet, statistics",
 				chart: 'mostPopular',
-				maxResults: 1,
+				maxResults: 9,
 				videoCategoryId
 			}
 		});
@@ -64,7 +67,13 @@ class HomePage extends Component {
 		});
 	}
 
-	
+	getVideoInfo(id, title, views, date, channelTitle, description, channelId) {
+		this.props.action.ytVideoId({id, title, views, date, channelTitle, description});
+		this.props.otherAction.getChannelInfo(channelId);
+		setTimeout(() => {
+			browserHistory.push("/video");
+		},1000);
+	}
 
 	getNine(category) {
 		let nine = category.filter( (a,i) => i < 9);
@@ -76,12 +85,11 @@ class HomePage extends Component {
 	}
 
 	componentDidMount() {
-		// this.getYoutubeInfo();
+		this.getYoutubeInfo();
 	}
 
 
 	render() {
-		console.log(this.props);
 		let {trending, comedy, education, music, gaming, sports, filmAnimation} = this.state;
 		let trends = this.getNine(trending);
 		let comedys = this.getNine(comedy);
@@ -90,21 +98,22 @@ class HomePage extends Component {
 		let gamings = this.getNine(gaming);
 		let sportz = this.getNine(sports);
 		let filmAnimations = this.getNine(filmAnimation);
+
 		return (
 			<div className="videoListContainer">
-				<VideoList title={"Trending"} videos={trends} navigate={this.goNavigation.bind(this)} link={'/trends'} />
+				<VideoList goToVideo={this.getVideoInfo} title={"Trending"} videos={trends} navigate={this.goNavigation.bind(this)} link={'/trends'} />
 				<hr />
-				<VideoList title={"Comedy"} videos={comedys} navigate={this.goNavigation.bind(this)} link={'/comedy'}/>
+				<VideoList goToVideo={this.getVideoInfo} title={"Comedy"} videos={comedys} navigate={this.goNavigation.bind(this)} link={'/comedy'}/>
 				<hr />
-				<VideoList title={"Education"} videos={educations} navigate={this.goNavigation.bind(this)} link={'/education'}/>
+				<VideoList goToVideo={this.getVideoInfo} title={"Education"} videos={educations} navigate={this.goNavigation.bind(this)} link={'/education'}/>
 				<hr />
-				<VideoList title={"Music"} videos={musics} navigate={this.goNavigation.bind(this)} link={'/music'}/>
+				<VideoList goToVideo={this.getVideoInfo} title={"Music"} videos={musics} navigate={this.goNavigation.bind(this)} link={'/music'}/>
 				<hr />
-				<VideoList title={"Gaming"} videos={gamings} navigate={this.goNavigation.bind(this)} link={'/games'}/>
+				<VideoList goToVideo={this.getVideoInfo} title={"Gaming"} videos={gamings} navigate={this.goNavigation.bind(this)} link={'/games'}/>
 				<hr />
-				<VideoList title={"Sports"} videos={sportz} navigate={this.goNavigation.bind(this)} link={'/sports'}/>
+				<VideoList goToVideo={this.getVideoInfo} title={"Sports"} videos={sportz} navigate={this.goNavigation.bind(this)} link={'/sports'}/>
 				<hr />
-				<VideoList title={"Film & Animation"} videos={filmAnimations} navigate={this.goNavigation.bind(this)} link={'/film'}/>
+				<VideoList goToVideo={this.getVideoInfo} title={"Film & Animation"} videos={filmAnimations} navigate={this.goNavigation.bind(this)} link={'/film'}/>
 			</div>
 		);
 	}
@@ -112,8 +121,17 @@ class HomePage extends Component {
 
 function mapStateToProps(state, ownProps) {
 	return {
-		videos: state.videos
-	}
+		videos: state.videos,
+		ytId: state.ytId,
+		userInfo: state.userInfo
+	};
 }
 
-export default connect(mapStateToProps)(HomePage);
+function mapDispatchToProps(dispatch) {
+	return {
+		action: bindActionCreators(ytVideoAction, dispatch),
+		otherAction: bindActionCreators(ytChannelInfoAction, dispatch)
+	};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

@@ -7,7 +7,9 @@ const PageItem = (props) => {
 				<div style={{paddingTop:"20px", width:"100%"}}>
 					<div className="pageItemsContainer">
 						<div>
-							<img src={props.snippet.thumbnails.high.url} width="250" height="150"/>
+							<img
+							 	onClick={()=>{props.onSave(props.id,props.snippet.title,props.statistics.viewCount,props.statistics.publishedAt, props.snippet.channelTitle, props.snippet.description, props.snippet.channelId)}}
+								src={props.snippet.thumbnails.high.url} width="250" height="150"/>
 						</div>
 						<div style={{marginLeft:"10px"}}>
 							<h1 className="titleOfVid">{props.snippet.title}</h1>

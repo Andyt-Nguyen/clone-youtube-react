@@ -21,7 +21,7 @@ export function getYoutubeInfo() {
 			key,
 			part: "id, contentDetails, snippet, statistics",
 			chart: 'mostPopular',
-			maxResults: 1,
+			maxResults: 10,
 			videoCategoryId
 		}
 	});
@@ -57,11 +57,15 @@ export function getYoutubeInfo() {
 			dispatch(sendYoutubeData(youtubeVideos));
 		});
 	}
+	setTimeout(()=>{
+		console.log("retriveing info");
+	},1000);
 }
 
 
 export function searchQuery(query) {
 	let searchedVideo;
+	let q = query;
 	const url = `https://www.googleapis.com/youtube/v3/search`;
 	const key = apiKey;
 
@@ -69,13 +73,15 @@ export function searchQuery(query) {
 		method:"GET",
 		url,
 		params: {
-			key,
-			part:"snippet",
-			maxResults:2,
-			order:"relevance",
-			q: query,
-			safeSearch: "moderate",
-			type:"video",
+			key: "AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ",
+				order: 'relevance',
+				part: "snippet, id",
+				chart: 'mostPopular',
+				myRating:'like',
+				maxResults: 12,
+				q,
+				type: 'video',
+				safeSearch: 'moderate'
 		}
 	});
 

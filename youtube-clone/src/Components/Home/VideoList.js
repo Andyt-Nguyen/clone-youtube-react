@@ -10,7 +10,7 @@ class VideoList extends Component {
 
 	render() {
 		let trendingItems = this.props.videos.map( (a,i) =>
-			<VideoItems key={i} {...a}/>
+			<VideoItems goToVideo={this.props.goToVideo} key={i} {...a} />
 		)
 		return (
 			<div style={{display:"flex",width:"100%", background:"white"}}>

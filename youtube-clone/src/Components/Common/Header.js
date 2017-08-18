@@ -22,7 +22,7 @@ class Header extends Component {
 
 	sendQuery(e) {
 		e.preventDefault();
-		this.props.action.searchQuery(this.state);
+		this.props.action.searchQuery(this.state.query);
 		browserHistory.push("/search");
 	}
 
@@ -45,7 +45,7 @@ class Header extends Component {
 							</div>
 						</div>
 
-						<form onSubmit={this.sendQuery.bind(this)} className="yt-nav-middle">
+						<form onSubmit={this.sendQuery} className="yt-nav-middle">
 							<input
 								type="text"
 								className="yt-search"

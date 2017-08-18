@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { browserHistory } from 'react-router';
 import SubPageHeader from '../Page/SubPageHeader';
 import PageItem from '../Page/PageItem';
-import * as youtubeActions from '../../actions/youtubeAction';
-import { convertDate, convertViews, limitDescription } from '../../resusableFxns';
+import * as ytVideoAction from '../../actions/ytVideoAction';
+import * as ytChannelInfoAction from '../../actions/ytChannelInfoAction';
 
 class ComedyPage extends Component {
+	constructor() {
+		super();
+		this.getVideoInfo = this.getVideoInfo.bind(this);
+	}
+
+	getVideoInfo(id, title, views, date, channelTitle, description, channelId) {
+		this.props.action.ytVideoId({id, title, views, date, channelTitle, description});
+		this.props.otherAction.getChannelInfo(channelId);
+		setTimeout(() => {
+			browserHistory.push("/video");
+		},1000);
+	}
 
 	render() {
+		console.log(this.props);
 		let pageItems = this.props.videos.comedy.map( (a,i) =>
 					<PageItem
 						key={i}
-						{...a} />
+						{...a}
+						onSave={this.getVideoInfo} />
 		);
 
 		return (
@@ -32,8 +47,17 @@ class ComedyPage extends Component {
 
 function mapStateToProps(state, ownProps) {
 	return {
-	videos: state.videos
+		videos: state.videos,
+		ytId: state.ytId,
+		userInfo: state.userInfo
 	};
 }
 
-export default connect(mapStateToProps)(ComedyPage);
+function mapDispatchToProps(dispatch) {
+	return {
+		action: bindActionCreators(ytVideoAction, dispatch),
+		otherAction: bindActionCreators(ytChannelInfoAction, dispatch)
+	};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ComedyPage);

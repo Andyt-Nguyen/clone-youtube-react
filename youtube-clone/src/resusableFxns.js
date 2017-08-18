@@ -63,3 +63,13 @@ export function addCommas(nStr){
  }
  return x1 + x2;
 }
+
+export function fiveWords(str) {
+	str = str.split(" ");
+	if(str.length < 8) {
+		return str.join(" ");
+	} else {
+		let fiveWords = str.filter( (a,i) => i < 8 );
+		return fiveWords.join(" ");
+	}
+}
