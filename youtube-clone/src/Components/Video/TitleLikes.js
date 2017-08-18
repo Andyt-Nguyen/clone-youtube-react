@@ -11,8 +11,8 @@ class TitleLikes extends Component {
 					<div className="positioningTitleLikes">
 
 						<div>
-							<h1 style={{fontSize:"20px"}}>Video Title Ipsum Lorem Of Some Kind</h1>
-							<h3 style={{color:"#707070", marginTop:"10px"}}>2,189,123 views</h3>
+							<h1 style={{fontSize:"20px", letterSpacing:".2px"}}>{this.props.videoTitle}</h1>
+							<h3 style={{color:"#707070", marginTop:"10px", fontSize:"20px"}}>{this.props.views} views</h3>
 						</div>
 
 						<div className="positionLikes">

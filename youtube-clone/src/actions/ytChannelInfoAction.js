@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { apiKey } from '../config';
+
 export function channeInfoAction(info) {
 	return {type: `CHANNEL_INFO_SUCCESS`, payload:info};
 
@@ -19,7 +22,7 @@ export function getChannelInfo(channelId) {
 	return dispatch => {
 		return promise.then(res => {
 			let channelInfo = res.data.items
-			dispatch(ytVideoId(channelInfo));
+			dispatch(channeInfoAction(channelInfo));
 		});
 	}
 }

@@ -7,7 +7,7 @@ import channelInfoReducer from './channelInfoReducer';
 const rootReducer = combineReducers({
     videos: youtubeReducer,
 		query: queryReducer,
-		ytId: ytIdReducer
+		ytId: ytIdReducer,
 		userInfo: channelInfoReducer
 });
 
