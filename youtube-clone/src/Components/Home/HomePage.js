@@ -34,7 +34,7 @@ class HomePage extends Component {
 				key,
 				part: "id, contentDetails, snippet, statistics",
 				chart: 'mostPopular',
-				maxResults: 1,
+				maxResults: 8,
 				videoCategoryId
 			}
 		});
