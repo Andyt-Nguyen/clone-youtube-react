@@ -24,6 +24,7 @@ class SearchLayout extends Component {
 	}
 
 	render() {
+		console.log(this.props);
 		const { videos } = this.props;
 		let searchItems = videos.map( (a,i) =>
 			<SearchItem
@@ -56,4 +57,5 @@ function mapDispatchToProps(dispatch){
 		recAction: bindActionCreators(recommendedAction, dispatch)
 	};
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(SearchLayout);

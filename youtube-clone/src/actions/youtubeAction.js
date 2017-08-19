@@ -21,7 +21,7 @@ export function getYoutubeInfo() {
 			key,
 			part: "id, contentDetails, snippet, statistics",
 			chart: 'mostPopular',
-			maxResults: 1,
+			maxResults: 15,
 			videoCategoryId
 		}
 	});
@@ -78,7 +78,7 @@ export function searchQuery(query) {
 			part: "snippet, id",
 			chart: 'mostPopular',
 			myRating:'like',
-			maxResults: 2,
+			maxResults: 20,
 			q,
 			type: 'video',
 			safeSearch: 'moderate'

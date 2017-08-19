@@ -62,14 +62,14 @@ class HomePage extends Component {
 			const gaming = res.data.items;
 			this.setState({gaming});
 			return promise(1)
-		}).then( res => {
+		 }).then( res => {
 			const filmAnimation = res.data.items;
 			this.setState({filmAnimation});
 		});
 	}
 
 	getVideoInfo(id, title, views, date, channelTitle, description, channelId, comment, dislike, like) {
-		this.props.action.ytVideoId({id, title, views, date, channelTitle, description});
+		this.props.action.ytVideoId({id, title, views, date, channelTitle, description, channelId, comment, dislike, like});
 		this.props.otherAction.getChannelInfo(channelId);
 		this.props.recAction.retriveRecommended(id);
 		setTimeout(() => {
@@ -87,7 +87,7 @@ class HomePage extends Component {
 	}
 
 	componentDidMount() {
-		// this.getYoutubeInfo();
+		this.getYoutubeInfo();
 	}
 
 

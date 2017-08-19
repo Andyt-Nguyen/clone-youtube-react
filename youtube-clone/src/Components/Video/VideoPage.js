@@ -51,7 +51,7 @@ class VideoPage extends Component {
 							date={date}
 							description={description} />
 
-						<CommentList />
+						<CommentList comment={addCommas(this.props.videoInfo[videoInfo.length -1].comment)}/>
 					</div>
 					<Recommended rec={this.props.recommended}/>
 				</div>

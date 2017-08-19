@@ -5,12 +5,8 @@ class CommentList extends Component{
 	render() {
 		return (
 			<div style={{marginLeft:"5%"}}>
-				<h1 style={{fontSize:"20px"}}>451 Comments</h1>
-				<CommentItem />
-				<CommentItem />
-				<CommentItem />
-				<CommentItem />
-				<CommentItem />
+				<h1 className="commentSection" style={{fontSize:"20px"}}>{this.props.comment} Comments</h1>
+				<div className="commentItem"><CommentItem /></div>
 			</div>
 		);
 	}

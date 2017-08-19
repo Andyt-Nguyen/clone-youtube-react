@@ -19,7 +19,7 @@ export function retriveRecommended(vidId) {
 			chart: 'mostPopular',
 			order: 'relevance',
 			myRating:'like',
-			maxResults: 3,
+			maxResults: 15,
 			relatedToVideoId: vidId,
 			safeSearch: 'moderate'
 		}
