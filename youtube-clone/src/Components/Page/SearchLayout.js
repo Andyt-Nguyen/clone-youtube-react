@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as ytVideoAction from '../../actions/ytVideoAction';
 import * as ytChannelInfoAction from '../../actions/ytChannelInfoAction';
+import * as recommendedAction from '../../actions/recommendedAction';
 import SearchItem from './SearchItem';
 
 class SearchLayout extends Component {
@@ -16,12 +17,14 @@ class SearchLayout extends Component {
 	getVideoId(id, title, views, date, channelTitle, description, channelId) {
 		this.props.action.ytVideoId({id, title, views, date, channelTitle, description});
 		this.props.otherAction.getChannelInfo(channelId);
+		this.props.recAction.retriveRecommended(id);
 		setTimeout(() => {
 			browserHistory.push("/video");
 		},1000);
 	}
 
 	render() {
+		console.log(this.props);
 		const { videos } = this.props;
 		let searchItems = videos.map( (a,i) =>
 			<SearchItem
@@ -50,7 +53,8 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch){
 	return {
 		action: bindActionCreators(ytVideoAction, dispatch),
-		otherAction: bindActionCreators(ytChannelInfoAction, dispatch)
+		otherAction: bindActionCreators(ytChannelInfoAction, dispatch),
+		recAction: bindActionCreators(recommendedAction, dispatch)
 	};
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SearchLayout);

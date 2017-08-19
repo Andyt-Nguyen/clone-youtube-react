@@ -22,13 +22,13 @@ class ComedyPage extends Component {
 	}
 
 	render() {
-		console.log(this.props);
+
 		let pageItems = this.props.videos.comedy.map( (a,i) =>
-					<PageItem
-						key={i}
-						{...a}
-						onSave={this.getVideoInfo} />
-		);
+				<PageItem
+					key={i}
+					{...a}
+					onSave={this.getVideoInfo} />
+				);
 
 		return (
 			<div className="container">

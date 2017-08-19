@@ -29,12 +29,12 @@ class VideoPage extends Component {
 		//ChannelIdProps
 		let channelThumbnail = this.props.channelId[channelId.length - 1].snippet.thumbnails.high.url;
 		let subCount = convertViews(channelId[channelId.length - 1].statistics.subscriberCount);
+
 		return (
 			<div>
-				<MainVideo videoId={vId} />
-
-				<div style={{display:"flex", marginTop:"3%", marginLeft:"2%"}}>
+				<div style={{display:"flex", marginTop:"1.7%", marginLeft:"2%"}}>
 					<div style={{width:"70%"}}>
+						<MainVideo videoId={vId} />
 						<TitleLikes
 							videoTitle={videoTitle}
 							views={views} />
@@ -48,7 +48,7 @@ class VideoPage extends Component {
 
 						<CommentList />
 					</div>
-					<Recommended />
+					<Recommended rec={this.props.recommended}/>
 				</div>
 			</div>
 		)
@@ -58,7 +58,8 @@ class VideoPage extends Component {
 function mapStateToProps(state, ownProps) {
 	return {
 		vidId: state.ytId,
-		channelId: state.userInfo
+		channelId: state.userInfo,
+		recommended: state.recommended
 	};
 }
 

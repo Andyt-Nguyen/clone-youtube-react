@@ -1,8 +1,17 @@
-function fireStr(str) {
-	setTimeout(function(){
-		console.log(str);
-	},1000)
+let obj = [
+	{
+		title: "Bingo",
+		lastTitle: "Bango"
+	},
+	{
+		title: "Bingo",
+		lastTitle: "Bango"
+	},
+	{
+		title: "Bingo",
+		lastTitle: "Bango"
+	},
+]
 
-}
-
-console.log(fireStr('yo'));
+let secObj = obj.map(a => a.title);
+console.log(secObj);

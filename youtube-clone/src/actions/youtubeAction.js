@@ -21,7 +21,7 @@ export function getYoutubeInfo() {
 			key,
 			part: "id, contentDetails, snippet, statistics",
 			chart: 'mostPopular',
-			maxResults: 10,
+			maxResults: 1,
 			videoCategoryId
 		}
 	});
@@ -73,15 +73,15 @@ export function searchQuery(query) {
 		method:"GET",
 		url,
 		params: {
-			key: "AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ",
-				order: 'relevance',
-				part: "snippet, id",
-				chart: 'mostPopular',
-				myRating:'like',
-				maxResults: 12,
-				q,
-				type: 'video',
-				safeSearch: 'moderate'
+			key,
+			order: 'relevance',
+			part: "snippet, id",
+			chart: 'mostPopular',
+			myRating:'like',
+			maxResults: 2,
+			q,
+			type: 'video',
+			safeSearch: 'moderate'
 		}
 	});
 
@@ -90,8 +90,8 @@ export function searchQuery(query) {
 		url: `https://www.googleapis.com/youtube/v3/videos`,
 		params: {
 			key,
-			part: "statistics, snippet",
-			id
+			id,
+			part: "statistics, snippet"
 		}
 	});
 

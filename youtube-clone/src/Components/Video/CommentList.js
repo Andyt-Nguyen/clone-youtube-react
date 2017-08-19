@@ -4,7 +4,7 @@ import CommentItem from './CommentItem';
 class CommentList extends Component{
 	render() {
 		return (
-			<div>
+			<div style={{marginLeft:"5%"}}>
 				<h1 style={{fontSize:"20px"}}>451 Comments</h1>
 				<CommentItem />
 				<CommentItem />

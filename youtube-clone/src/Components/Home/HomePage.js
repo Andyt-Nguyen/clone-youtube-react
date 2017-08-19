@@ -33,7 +33,7 @@ class HomePage extends Component {
 				key,
 				part: "id, contentDetails, snippet, statistics",
 				chart: 'mostPopular',
-				maxResults: 9,
+				maxResults: 1,
 				videoCategoryId
 			}
 		});
@@ -85,7 +85,7 @@ class HomePage extends Component {
 	}
 
 	componentDidMount() {
-		this.getYoutubeInfo();
+		// this.getYoutubeInfo();
 	}
 
 

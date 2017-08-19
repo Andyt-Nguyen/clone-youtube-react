@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import RecommendedItem from './RecommendedItem';
 class Recommended extends Component {
 	render() {
+		console.log(this.props.rec);
+		let recommendedItem = this.props.rec.map((a,i) =>
+			<RecommendedItem key={i} {...a}/>
+		);
+
 		return (
-			<div>
-				<RecommendedItem />
-				<RecommendedItem />
-				<RecommendedItem />
-				<RecommendedItem />
-				<RecommendedItem />
-				<RecommendedItem />
+			<div className="RecommendedContainer">
+				<h1>Recommended</h1>
+				{recommendedItem}
 			</div>
 		)
 	}

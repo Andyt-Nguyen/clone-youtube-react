@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:500');
 .titleLikesViews {
 	display:flex;
 }
@@ -9,17 +11,20 @@
 }
 
 .videoPlay {
-	width: 100%;
-	background: black;
+	/*background: black;*/
+	margin-bottom: 4%;
 	display:flex;
-	justify-content:center
+	justify-content:flex-start;
+	width: 100%;
+	margin-left: 3.5%;
 }
 
 .positioningTitleLikes {
 	/*border: 2px solid purple;*/
-	width: 100%;
+	width: 95%;
 	display: flex;
-	justify-content: space-between
+	justify-content: space-between;
+	margin-left: 3%;
 }
 
 .positionLikes {
@@ -27,7 +32,7 @@
 	display: flex;
 	justify-content:space-around;
 	align-items:flex-start;
-	width: 46%;
+	width: 30%;
 }
 
 .iconsColorFonts {
@@ -43,9 +48,15 @@
 	display: none
 }
 
+.channelContainer {
+	margin-left: 2%;
+}
+
 .positionChannelContainer {
 	display:flex;
 	justify-content:space-between;
+	/*border:2px solid red;*/
+	margin-left: 2.3%;
 }
 
 .channelThumbnail {
@@ -61,26 +72,49 @@
 .channelDate {
 	font-size: 12px;
 	color:#707070;
+	margin-top: 1%;
+	/*border: 2px solid green;*/
+	width: 300px;
 }
 
 .channelDescription {
 	margin-top:25px;
-	line-height:200%
+	line-height:300%;
+	/*border: 2px solid green;*/
+	width: 580px;
 }
 
 .showLessMore {
+	margin-top: 3%;
 	font-size: 15px;
 	color:#707070;
-	cursor:pointer
+	/*border: 2px solid red*/
 }
 
+
 .subButton{
-	font-size: 17px;
-	padding: 5px 7px;
-	width: 120px;
+	font-size: 15px;
+	padding: 10px 15px;
 	background: #e62117;
-	font-weight: 600;
 	color: white;
 	border: 2px solid #e62117;
 	border-radius: 2px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+}
+
+.RecommendedContainer {
+	margin-right: 3%;
+}
+
+.recThumbnail {
+	width: 137px;
+	height: 96px;
+}
+
+.recTitle {
+	font-size: 15px;
+	width: 225px;
+	font-family: "Roboto";
+	font-weight: bolder;
 }
