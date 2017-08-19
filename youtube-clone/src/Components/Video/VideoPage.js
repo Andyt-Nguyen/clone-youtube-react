@@ -18,26 +18,31 @@ class VideoPage extends Component {
 		console.log(this.props);
 
 		//VidIdProps
-		let { vidId, channelId } = this.props;
-		let vId = vidId[vidId.length - 1].id;
-		let videoTitle = vidId[vidId.length -1].title;
-		let channelTitle = vidId[vidId.length - 1].channelTitle;
-		let views = addCommas(vidId[vidId.length - 1].views);
-		let date = convertDate(vidId[vidId.length - 1].date);
-		let description = vidId[vidId.length - 1].description;
+		let { videoInfo, channelInfo } = this.props;
+		let vId = videoInfo[videoInfo.length - 1].id;
+		let videoTitle = videoInfo[videoInfo.length -1].title;
+		let channelTitle = videoInfo[videoInfo.length - 1].channelTitle;
+		let views = addCommas(videoInfo[videoInfo.length - 1].views);
+		let date = convertDate(videoInfo[videoInfo.length - 1].date);
+		let description = videoInfo[videoInfo.length - 1].description;
+		let videoLikes = videoInfo[videoInfo.length - 1].like;
+		let videoDislikes = videoInfo[videoInfo.length -1].dislike;
 
 		//ChannelIdProps
-		let channelThumbnail = this.props.channelId[channelId.length - 1].snippet.thumbnails.high.url;
-		let subCount = convertViews(channelId[channelId.length - 1].statistics.subscriberCount);
+		let channelThumbnail = this.props.channelInfo[channelInfo.length - 1].snippet.thumbnails.high.url;
+		let subCount = convertViews(channelInfo[channelInfo.length - 1].statistics.subscriberCount);
 
 		return (
 			<div>
 				<div style={{display:"flex", marginTop:"1.7%", marginLeft:"2%"}}>
 					<div style={{width:"70%"}}>
 						<MainVideo videoId={vId} />
+
 						<TitleLikes
 							videoTitle={videoTitle}
-							views={views} />
+							views={views}
+							likes={videoLikes}
+							dislikes={videoDislikes} />
 
 						<ChannelDetails
 							channelTitle={channelTitle}
@@ -57,8 +62,8 @@ class VideoPage extends Component {
 
 function mapStateToProps(state, ownProps) {
 	return {
-		vidId: state.ytId,
-		channelId: state.userInfo,
+		videoInfo: state.ytId,
+		channelInfo: state.userInfo,
 		recommended: state.recommended
 	};
 }

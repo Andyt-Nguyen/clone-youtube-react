@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import RecommendedItem from './RecommendedItem';
 class Recommended extends Component {
 	render() {
-		console.log(this.props.rec);
 		let recommendedItem = this.props.rec.map((a,i) =>
 			<RecommendedItem key={i} {...a}/>
 		);

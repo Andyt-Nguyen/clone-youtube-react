@@ -14,10 +14,10 @@ class ChannelDetails extends Component {
 	render() {
 		 const showLessMore =()=> {
 			if(this.state.show === true){
-				// this.setState({openDescription:"SHOW LESS"});
+				this.setState({openDescription:"SHOW LESS"});
 				return "show";
 			} else {
-				// this.setState({openDescription:"SHOW MORE"});
+				this.setState({openDescription:"SHOW MORE"});
 				return "none";
 			}
 		}
@@ -36,7 +36,7 @@ class ChannelDetails extends Component {
 							<div className={showLessMore()}>
 								<h1 className="channelDescription">{this.props.description}</h1>
 							</div>
-							<h1 onClick={()=>console.log("yoy yoyyyy")} className="showLessMore">{this.state.openDescription}</h1>
+							<h1 onClick={() => {this.setState({show:!this.state.show})}} className="showLessMore">{this.state.openDescription}</h1>
 						</div>
 					</div>
 

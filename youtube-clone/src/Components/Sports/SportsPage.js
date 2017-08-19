@@ -6,6 +6,7 @@ import SubPageHeader from '../Page/SubPageHeader';
 import PageItem from '../Page/PageItem';
 import * as ytVideoAction from '../../actions/ytVideoAction';
 import * as ytChannelInfoAction from '../../actions/ytChannelInfoAction';
+import * as recommendedAction from '../../actions/recommendedAction';
 
 class SportsPage extends Component {
 	constructor() {
@@ -13,9 +14,10 @@ class SportsPage extends Component {
 		this.getVideoInfo = this.getVideoInfo.bind(this);
 	}
 
-	getVideoInfo(id, title, views, date, channelTitle, description, channelId) {
-		this.props.action.ytVideoId({id, title, views, date, channelTitle, description});
+	getVideoInfo(id, title, views, date, channelTitle, description, channelId, comment, dislike, like) {
+		this.props.action.ytVideoId({id, title, views, date, channelTitle, description,channelId, comment, dislike, like});
 		this.props.otherAction.getChannelInfo(channelId);
+		this.props.recAction.retriveRecommended(id);
 		setTimeout(() => {
 			browserHistory.push("/video");
 		},1000);
@@ -55,7 +57,8 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch) {
 	return {
 		action: bindActionCreators(ytVideoAction, dispatch),
-		otherAction: bindActionCreators(ytChannelInfoAction, dispatch)
+		otherAction: bindActionCreators(ytChannelInfoAction, dispatch),
+		recAction: bindActionCreators(recommendedAction, dispatch)
 	};
 }
 

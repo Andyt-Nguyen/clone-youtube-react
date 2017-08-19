@@ -14,8 +14,8 @@ class SearchLayout extends Component {
 		this.getVideoId = this.getVideoId.bind(this);
 	}
 
-	getVideoId(id, title, views, date, channelTitle, description, channelId) {
-		this.props.action.ytVideoId({id, title, views, date, channelTitle, description});
+	getVideoId(id, title, views, date, channelTitle, description, channelId, comment, dislike, like) {
+		this.props.action.ytVideoId({id, title, views, date, channelTitle, description, comment, dislike, like});
 		this.props.otherAction.getChannelInfo(channelId);
 		this.props.recAction.retriveRecommended(id);
 		setTimeout(() => {
@@ -24,7 +24,6 @@ class SearchLayout extends Component {
 	}
 
 	render() {
-		console.log(this.props);
 		const { videos } = this.props;
 		let searchItems = videos.map( (a,i) =>
 			<SearchItem

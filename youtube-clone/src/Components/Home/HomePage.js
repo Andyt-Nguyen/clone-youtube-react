@@ -7,6 +7,7 @@ import VideoList from './VideoList';
 import * as youtubeActions from '../../actions/youtubeAction';
 import * as ytVideoAction from '../../actions/ytVideoAction';
 import * as ytChannelInfoAction from '../../actions/ytChannelInfoAction';
+import * as recommendedAction from '../../actions/recommendedAction';
 
 class HomePage extends Component {
 	constructor() {
@@ -67,9 +68,10 @@ class HomePage extends Component {
 		});
 	}
 
-	getVideoInfo(id, title, views, date, channelTitle, description, channelId) {
+	getVideoInfo(id, title, views, date, channelTitle, description, channelId, comment, dislike, like) {
 		this.props.action.ytVideoId({id, title, views, date, channelTitle, description});
 		this.props.otherAction.getChannelInfo(channelId);
+		this.props.recAction.retriveRecommended(id);
 		setTimeout(() => {
 			browserHistory.push("/video");
 		},1000);
@@ -130,7 +132,8 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch) {
 	return {
 		action: bindActionCreators(ytVideoAction, dispatch),
-		otherAction: bindActionCreators(ytChannelInfoAction, dispatch)
+		otherAction: bindActionCreators(ytChannelInfoAction, dispatch),
+		recAction: bindActionCreators(recommendedAction, dispatch)
 	};
 }
 

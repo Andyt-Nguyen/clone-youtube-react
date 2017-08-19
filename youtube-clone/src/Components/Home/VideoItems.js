@@ -5,7 +5,7 @@ const VideoItems = (props) =>  {
 	return (
 			<div style={{padding:"20px"}}>
 				<img
-					onClick={()=>{props.goToVideo(props.id, props.snippet.title, props.statistics.viewCount, props.snippet.publishedAt, props.snippet.channelTitle, props.snippet.description, props.snippet.channelId)}}
+					onClick={()=>{props.goToVideo(props.id, props.snippet.title, props.statistics.viewCount, props.snippet.publishedAt, props.snippet.channelTitle, props.snippet.description, props.snippet.channelId, props.statistics.commmentCount, props.statistics.dislikeCount, props.statistics.likeCount)}}
 					src={props.snippet.thumbnails.high.url}
 					height="122"
 					width='200'/>

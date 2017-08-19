@@ -31,13 +31,13 @@
 	/*border: 2px solid green;*/
 	display: flex;
 	justify-content:space-around;
-	align-items:flex-start;
+	align-items:baseline;
 	width: 30%;
 }
 
 .iconsColorFonts {
-	font-size: 20px;
-	color: #707070;
+	font-size: 18px;
+	color: #a0a0a0;
 }
 
 .show{
@@ -71,7 +71,7 @@
 
 .channelDate {
 	font-size: 12px;
-	color:#707070;
+	color:#a0a0a0;
 	margin-top: 1%;
 	/*border: 2px solid green;*/
 	width: 300px;
@@ -87,7 +87,8 @@
 .showLessMore {
 	margin-top: 3%;
 	font-size: 15px;
-	color:#707070;
+	color:#a0a0a0;
+	cursor: pointer;
 	/*border: 2px solid red*/
 }
 
@@ -105,6 +106,7 @@
 
 .RecommendedContainer {
 	margin-right: 3%;
+	/*border: 2px solid blue*/
 }
 
 .recThumbnail {
@@ -117,4 +119,34 @@
 	width: 225px;
 	font-family: "Roboto";
 	font-weight: bolder;
+}
+
+.like {
+	color: #a0a0a0;
+	margin-left: 10px;
+	font-size: 18px;
+}
+
+.dislike {
+	color: #a0a0a0;
+	margin-left: 10px;
+	font-size: 18px;
+}
+
+.text-center {
+	display: flex;
+	justify-content: space-between;
+	/*border: 2px solid red;*/
+}
+
+.superContainer {
+	/*border: 2px solid red;*/
+}
+
+.likeDislike {
+	background:#a0a0a0;
+	height: 2px;
+	width: 200px;
+	text-align: center;
+	margin-left: 70%;
 }

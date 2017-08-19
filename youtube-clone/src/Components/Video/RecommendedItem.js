@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { convertViews } from '../../resusableFxns';
 
 class RecommendedItems extends Component {
 	render() {
@@ -8,7 +9,7 @@ class RecommendedItems extends Component {
 				<div style={{marginLeft:'10px'}}>
 					<p className="recTitle">{this.props.snippet.title}</p>
 					<p style={{fontSize:"12px", color:"grey", marginTop:'5px'}}>{this.props.snippet.channelTitle}</p>
-					<p style={{fontSize:"12px", color:"grey", marginTop:'5px'}}>{this.props.statistics.viewCount} views</p>
+					<p style={{fontSize:"12px", color:"grey", marginTop:'5px'}}>{convertViews(this.props.statistics.viewCount)} views</p>
 				</div>
 			</div>
 		)
