@@ -79,13 +79,25 @@
 	}
 
 	.loader {
-		position: absolute;
 		bottom:55%;
 		left:35%;
 	}
 
 	.recLoader {
-		position: absolute;
+		top:25%;
+		right: 45%;
+	}
+}
+
+@media only screen and (max-width: 780px) {
+	.recLoader {
+		top:25%;
+		right: 50%;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	.recLoader {
 		top:25%;
 		right: 45%;
 	}

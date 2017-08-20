@@ -46,9 +46,15 @@
 	color:red;
 }
 
+@media only screen and (max-width: 780px) {
+	.ytSideNav {
+		top: 5.5%;
+	}
+}
+
 @media only screen and (max-width: 650px){
 	.ytSideNav {
-		margin-top: 3.1%;
+		top: 7%;
 	}
 
 	.yt-search{
@@ -63,8 +69,8 @@
 	}
 }
 
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:580px) {
 	.ytSideNav {
-		margin-top: 2%;
+		top: 7%;
 	}
 }
