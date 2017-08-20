@@ -24,7 +24,6 @@ class SearchLayout extends Component {
 	}
 
 	render() {
-		console.log(this.props);
 		const { videos } = this.props;
 		let searchItems = videos.map( (a,i) =>
 			<SearchItem
@@ -34,8 +33,8 @@ class SearchLayout extends Component {
 		);
 
 		return (
-			<div className="container">
-				<h2>About 478,000 results</h2>
+			<div className="container SearchLayout">
+				<h2>Popular Results</h2>
 				<hr />
 				{searchItems}
 			</div>

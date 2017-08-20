@@ -18,8 +18,8 @@ const RecommendedItems = (props) => {
 						className="recTitle">{props.snippet.title}
 					</p>
 
-					<p style={{fontSize:"12px", color:"grey", marginTop:'5px'}}>{props.snippet.channelTitle}</p>
-					<p style={{fontSize:"12px", color:"grey", marginTop:'5px'}}>{convertViews(props.statistics.viewCount)} views</p>
+					<p className="recChannelTitle">{props.snippet.channelTitle}</p>
+					<p className="recChannelTitle">{convertViews(props.statistics.viewCount)} views</p>
 				</div>
 			</div>
 		)

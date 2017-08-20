@@ -10,7 +10,6 @@ class SearchQuery extends PureComponent {
 	}
 
 	render() {
-		console.log(this.props.query);
 		return (
 			<div>
 				<SearchLayout videos={this.props.query} />

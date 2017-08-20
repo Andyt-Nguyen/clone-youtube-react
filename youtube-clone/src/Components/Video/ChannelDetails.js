@@ -11,17 +11,17 @@ class ChannelDetails extends Component {
 		}
 	}
 
-	render() {
-		 const showLessMore =()=> {
-			if(this.state.show === true){
-				this.setState({openDescription:"SHOW LESS"});
-				return "show";
-			} else {
-				this.setState({openDescription:"SHOW MORE"});
-				return "none";
-			}
-		}
+	showLessMore() {
+	 if(this.state.show === true){
+		 this.setState({openDescription:"SHOW LESS"});
+		 return "show";
+	 } else {
+		 this.setState({openDescription:"SHOW MORE"});
+		 return "none";
+	 }
+ }
 
+	render() {
 		return (
 			<div className="channelContainer">
 				<hr />
@@ -33,10 +33,10 @@ class ChannelDetails extends Component {
 						<div style={{marginLeft:"2%"}}>
 							<h1 className="channelTitle">{this.props.channelTitle}</h1>
 							<p className="channelDate">Published on {convertDate(this.props.date)}</p>
-							<div className={showLessMore()}>
+							<div className={this.showLessMore()}>
 								<h1 className="channelDescription">{this.props.description}</h1>
 							</div>
-							<h1 onClick={() => {this.setState({show:!this.state.show})}} className="showLessMore">{this.state.openDescription}</h1>
+							<h1 onClick={() => {this.setState({show: !this.state.show})}} className="showLessMore">{this.state.openDescription}</h1>
 						</div>
 					</div>
 

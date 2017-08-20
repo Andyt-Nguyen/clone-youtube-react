@@ -34,7 +34,7 @@ class HomePage extends Component {
 				key,
 				part: "id, contentDetails, snippet, statistics",
 				chart: 'mostPopular',
-				maxResults: 8,
+				maxResults: 10,
 				videoCategoryId
 			}
 		});
@@ -78,7 +78,7 @@ class HomePage extends Component {
 	}
 
 	getNine(category) {
-		let nine = category.filter( (a,i) => i < 9);
+		let nine = category.filter( (a,i) => i < 10);
 		return nine;
 	}
 

@@ -70,18 +70,23 @@
 }
 
 .channelDate {
-	font-size: 12px;
+	font-size: 14px;
 	color:#a0a0a0;
 	margin-top: 1%;
-	/*border: 2px solid green;*/
 	width: 300px;
 }
 
 .channelDescription {
 	margin-top:25px;
 	line-height:300%;
-	/*border: 2px solid green;*/
 	width: 580px;
+}
+
+.mainVideoTitle {
+	font-size:20px;
+	letter-spacing:.2px;
+	width: 500px;
+
 }
 
 .showLessMore {
@@ -89,7 +94,6 @@
 	font-size: 15px;
 	color:#a0a0a0;
 	cursor: pointer;
-	/*border: 2px solid red*/
 }
 
 
@@ -110,7 +114,7 @@
 }
 
 .recThumbnail {
-	width: 137px;
+	width: 170px;
 	height: 96px;
 }
 
@@ -159,4 +163,103 @@
 	margin-top: 30px;
 	display: flex;
 	justify-content: center;
+}
+
+
+.megaContainer {
+	display:flex;
+	margin-top:1.7%;
+	margin-left:2%
+}
+
+.containerForMTCC {
+	width: 70%;
+}
+
+.recChannelTitle {
+	font-size: 15px;
+	color: grey;
+	margin-top:7px;
+}
+
+@media only screen and (max-width: 1200px) {
+	.likeDislike {
+		margin-left: 67%;
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+	.megaContainer {
+		flex-direction: column;
+	}
+
+	.containerForMTCC {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+
+	.subButton {
+		margin-top: 30px;
+		font-size: 15px;
+	}
+
+
+	.likeDislike {
+		margin-left: 72%;
+	}
+}
+
+
+@media only screen and (max-width: 750px) {
+	.likeDislike {
+		margin-left: 70%;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.likeDislike {
+		margin-left: 65%;
+	}
+
+	.positionChannelContainer {
+		flex-direction: column;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	.likeDislike {
+		margin-left: 63%;
+	}
+
+	.positioningTitleLikes {
+		flex-wrap: wrap;
+	}
+
+	.likeDislike {
+		margin-left: 3%;
+	}
+
+	.iconsColorFonts {
+		margin-left: 20px;
+	}
+
+	.theThumbup {
+		margin-left: 40%;
+	}
+
+
+}
+
+@media only screen and (max-width: 550px) {
+	.likeDislike {
+		margin-left: 3%;
+	}
+
+	.iconsColorFonts {
+		margin-left: 20px;
+	}
+
+	.theThumbup {
+		margin-left: 110%;
+	}
 }

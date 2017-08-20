@@ -27,7 +27,8 @@ const PageItem = (props) => {
 							<img
 							 	onClick={()=>{props.onSave(props.id,props.snippet.title,props.statistics.viewCount,props.snippet.publishedAt, props.snippet.channelTitle, props.snippet.description, props.snippet.channelId, props.statistics.commentCount, props.statistics.dislikeCount, props.statistics.likeCount)}}
 								style={{cursor:"pointer"}}
-								src={thumbnails()} width="250" height="150"/>
+								className="pageThumbnails"
+								src={thumbnails()} />
 						</div>
 						<div style={{marginLeft:"10px"}}>
 							<h1

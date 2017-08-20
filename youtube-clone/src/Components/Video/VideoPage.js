@@ -15,7 +15,6 @@ class VideoPage extends Component {
 
 
 	render() {
-		console.log(this.props);
 
 		//VidIdProps
 		let { videoInfo, channelInfo } = this.props;
@@ -34,8 +33,8 @@ class VideoPage extends Component {
 
 		return (
 			<div>
-				<div style={{display:"flex", marginTop:"1.7%", marginLeft:"2%"}}>
-					<div style={{width:"70%"}}>
+				<div className="megaContainer">
+					<div className="containerForMTCC">
 						<MainVideo videoId={vId} />
 
 						<TitleLikes

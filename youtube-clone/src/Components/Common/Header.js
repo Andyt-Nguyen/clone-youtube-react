@@ -14,6 +14,11 @@ class Header extends Component {
 		};
 		this.sendQuery = this.sendQuery.bind(this);
 		this.onQueryChange = this.onQueryChange.bind(this);
+		this.backToHomePage = this.backToHomePage.bind(this);
+	}
+
+	backToHomePage() {
+		browserHistory.push("/")
 	}
 
 	revealSideNav() {
@@ -39,9 +44,9 @@ class Header extends Component {
 								onClick={this.revealSideNav.bind(this)}
 								className="material-icons"
 								style={{cursor:"pointer"}}>&#xE8EE;</i>
-							<img className="youtubeLogo" src="https://s22.postimg.org/ew0lnw0pd/youtube_Logo.png" width="70px"/>
+							<img style={{cursor:"pointer"}} onClick={this.backToHomePage} className="youtubeLogo" src="https://s22.postimg.org/ew0lnw0pd/youtube_Logo.png" width="70px"/>
 							<div className="playBtnPic">
-								<img src="https://s18.postimg.org/wsh1d8pa1/youtube_Icon.png" width="40px" />
+								<img style={{cursor:"pointer"}} onClick={this.backToHomePage} src="https://s18.postimg.org/wsh1d8pa1/youtube_Icon.png" width="40px" />
 							</div>
 						</div>
 

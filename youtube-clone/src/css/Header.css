@@ -1,3 +1,9 @@
+.header {
+	position: fixed;
+	width: 100%;
+	z-index: 50;
+}
+
 .playBtnPic {
 	display: none;
 }
@@ -43,11 +49,6 @@
 	margin-left: 10%;
 }
 
-/*.header {
-	position: fixed;
-	width: 100%;
-	z-index: 50;
-}*/
 
 @media only screen and (max-width: 650px){
 	.youtubeLogo {

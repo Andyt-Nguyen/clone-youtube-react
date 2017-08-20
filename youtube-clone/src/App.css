@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+.nav {
+	position: fixed;
+	width: 100%;
+	z-index:  50;
+}
+
 * {
 	font-family: "Roboto";
 }
 
 .body {
-	/*margin-top: 3%;*/
+	margin-top: 3%;
 	width: 100%;
 }
 

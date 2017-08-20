@@ -20,12 +20,12 @@ class TitleLikes extends Component {
 					<div className="titleLikesViewsContainer">
 						<div className="positioningTitleLikes">
 							<div>
-								<h1 style={{fontSize:"20px", letterSpacing:".2px"}}>{this.props.videoTitle}</h1>
-								<h3 style={{color:"#a0a0a0", marginTop:"10px", fontSize:"15px"}}>{this.props.views} views</h3>
+								<h1 className="mainVideoTitle">{this.props.videoTitle}</h1>
+								<h3 style={{color:"#a0a0a0", marginTop:"10px", fontSize:"17px"}}>{this.props.views} views</h3>
 							</div>
 
 							<div className="positionLikes">
-								<div className="text-center">
+								<div className="text-center theThumbup">
 									<i className="material-icons iconsColorFonts">thumb_up</i>{" "}<span className="like">{convertViews(this.props.likes)}</span>
 							</div>
 
@@ -34,7 +34,7 @@ class TitleLikes extends Component {
 							</div>
 
 								<h3><i style={{color:"#a0a0a0", fontSize:"25px"}} className="material-icons iconsColorFonts">redo</i></h3>
-								<i style={{color:"#a0a0a0", fontSize:"25px"}} className="material-icons">toc</i>
+								<i style={{color:"#a0a0a0", fontSize:"25px"}} className="material-icons iconsColorFonts">toc</i>
 							</div>
 						</div>
 					</div>
