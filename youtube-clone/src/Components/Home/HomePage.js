@@ -3,6 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { browserHistory } from 'react-router';
+import { apiKey } from '../../config';
 import VideoList from './VideoList';
 import * as youtubeActions from '../../actions/youtubeAction';
 import * as ytVideoAction from '../../actions/ytVideoAction';
@@ -33,7 +34,7 @@ class HomePage extends Component {
 
 	getYoutubeInfo() {
 		const url = "https://www.googleapis.com/youtube/v3/videos";
-		const key = "AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ";
+		const key = apiKey;
 		let promise = (videoCategoryId) => axios({
 			method: "GET",
 			url,
