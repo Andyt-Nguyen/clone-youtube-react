@@ -11,6 +11,19 @@ import "./VideoCss.css";
 class VideoPage extends Component {
 	constructor() {
 		super();
+		this.state = {
+			isLoading: true
+		}
+	}
+
+	loadRec() {
+		setTimeout(()=>{
+			this.setState({isLoading:false});
+		},2000)
+	}
+
+	componentWillMount() {
+		this.loadRec();
 	}
 
 
@@ -52,7 +65,7 @@ class VideoPage extends Component {
 
 						<CommentList comment={addCommas(this.props.videoInfo[videoInfo.length -1].comment)}/>
 					</div>
-					<Recommended rec={this.props.recommended}/>
+					{this.state.isLoading ? <div className="recLoader"></div> : <Recommended rec={this.props.recommended}/>}
 				</div>
 			</div>
 		)

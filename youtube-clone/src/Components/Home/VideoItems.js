@@ -23,7 +23,7 @@ const VideoItems = (props) =>  {
 				<img
 					onClick={()=>{props.goToVideo(props.id, props.snippet.title, props.statistics.viewCount, props.snippet.publishedAt, props.snippet.channelTitle, props.snippet.description, props.snippet.channelId, props.statistics.commentCount, props.statistics.dislikeCount, props.statistics.likeCount)}}
 					src={thumbnails()}
-					style={{cursor:"pointer"}}
+					className="theThumbnail"
 					height="122"
 					width='200'/>
 				<div style={{display:'flex', flexWrap:'wrap', width:'200px'}}>

@@ -63,6 +63,15 @@
 	height:150px;
 }
 
+.theThumbnail {
+	cursor: pointer;
+	transition: .4s;
+}
+
+.theThumbnail:hover {
+	opacity: .8;
+}
+
 @media only screen and (max-width:1100px) {
 	.pageCol {
 		width: 100%;

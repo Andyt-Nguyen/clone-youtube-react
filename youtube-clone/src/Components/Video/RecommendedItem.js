@@ -8,7 +8,7 @@ const RecommendedItems = (props) => {
 				<img
 				 onClick={() => props.getVideo(props.id, props.snippet.title, props.statistics.viewCount, props.snippet.publishedAt, props.snippet.channelTitle, props.snippet.description, props.snippet.channelId, props.statistics.commentCount, props.statistics.dislikeCount, props.statistics.likeCount)}
 				 style={{cursor:"pointer"}}
-				 className="recThumbnail"
+				 className="recThumbnail theThumbnail"
 				 src={props.snippet.thumbnails.high.url} />
 
 				<div style={{marginLeft:'10px'}}>

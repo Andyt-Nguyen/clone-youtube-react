@@ -19,9 +19,16 @@ class HomePage extends Component {
 			comedy: [],
 			gaming: [],
 			sports: [],
-			filmAnimation: []
+			filmAnimation: [],
+			isLoading: true
 		};
 		this.getVideoInfo = this.getVideoInfo.bind(this);
+	}
+
+	loadingContent() {
+		setTimeout(()=>{
+			this.setState({isLoading: false})
+		},2500);
 	}
 
 	getYoutubeInfo() {
@@ -88,6 +95,7 @@ class HomePage extends Component {
 
 	componentDidMount() {
 		this.getYoutubeInfo();
+		this.loadingContent();
 	}
 
 
@@ -102,20 +110,24 @@ class HomePage extends Component {
 		let filmAnimations = this.getNine(filmAnimation);
 
 		return (
-			<div className="videoListContainer">
-				<VideoList goToVideo={this.getVideoInfo} title={"Trending"} videos={trends} navigate={this.goNavigation.bind(this)} link={'/trends'} />
-				<hr />
-				<VideoList goToVideo={this.getVideoInfo} title={"Comedy"} videos={comedys} navigate={this.goNavigation.bind(this)} link={'/comedy'}/>
-				<hr />
-				<VideoList goToVideo={this.getVideoInfo} title={"Education"} videos={educations} navigate={this.goNavigation.bind(this)} link={'/education'}/>
-				<hr />
-				<VideoList goToVideo={this.getVideoInfo} title={"Music"} videos={musics} navigate={this.goNavigation.bind(this)} link={'/music'}/>
-				<hr />
-				<VideoList goToVideo={this.getVideoInfo} title={"Gaming"} videos={gamings} navigate={this.goNavigation.bind(this)} link={'/games'}/>
-				<hr />
-				<VideoList goToVideo={this.getVideoInfo} title={"Sports"} videos={sportz} navigate={this.goNavigation.bind(this)} link={'/sports'}/>
-				<hr />
-				<VideoList goToVideo={this.getVideoInfo} title={"Film & Animation"} videos={filmAnimations} navigate={this.goNavigation.bind(this)} link={'/film'}/>
+			<div>
+				{this.state.isLoading ? <div className="loader"></div> :
+				<div className="videoListContainer">
+					<VideoList goToVideo={this.getVideoInfo} title={"Trending"} videos={trends} navigate={this.goNavigation.bind(this)} link={'/trends'} />
+					<hr />
+					<VideoList goToVideo={this.getVideoInfo} title={"Comedy"} videos={comedys} navigate={this.goNavigation.bind(this)} link={'/comedy'}/>
+					<hr />
+					<VideoList goToVideo={this.getVideoInfo} title={"Education"} videos={educations} navigate={this.goNavigation.bind(this)} link={'/education'}/>
+					<hr />
+					<VideoList goToVideo={this.getVideoInfo} title={"Music"} videos={musics} navigate={this.goNavigation.bind(this)} link={'/music'}/>
+					<hr />
+					<VideoList goToVideo={this.getVideoInfo} title={"Gaming"} videos={gamings} navigate={this.goNavigation.bind(this)} link={'/games'}/>
+					<hr />
+					<VideoList goToVideo={this.getVideoInfo} title={"Sports"} videos={sportz} navigate={this.goNavigation.bind(this)} link={'/sports'}/>
+					<hr />
+					<VideoList goToVideo={this.getVideoInfo} title={"Film & Animation"} videos={filmAnimations} navigate={this.goNavigation.bind(this)} link={'/film'}/>
+				</div>
+			}
 			</div>
 		);
 	}

@@ -8,6 +8,7 @@ const SearchItem = (props) => {
 			<img
 				 style={{cursor:"pointer"}}
 				 onClick={() => props.getId(props.id, props.snippet.title, props.statistics.viewCount, props.snippet.publishedAt, props.snippet.channelTitle, props.snippet.description, props.snippet.channelId, props.statistics.commentCount, props.statistics.dislikeCount, props.statistics.likeCount)}
+				 style={{width:"250px",height:"160px", cursor:"pointer"}}
 				 className="searchThumbnail"
 				 src={props.snippet.thumbnails.high.url} />
 
@@ -19,7 +20,7 @@ const SearchItem = (props) => {
 				 </h1>
 
 				<h3 className="searchChannelViews">{props.snippet.channelTitle} {convertViews(props.statistics.viewCount)} views {" "} {convertDate(props.snippet.publishedAt)}</h3>
-				<h3 className="searchDescription">{limitDescription(props.snippet.description, 212)} </h3>
+				<h3 className="searchDescription">{limitDescription(props.snippet.description, 58)} </h3>
 			</div>
 		</div>
 	);

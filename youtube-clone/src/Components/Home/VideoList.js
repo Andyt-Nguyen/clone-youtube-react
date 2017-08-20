@@ -5,7 +5,9 @@ import { browserHistory } from 'react-router';
 class VideoList extends Component {
 
 	goNavigation() {
-		this.props.navigate(this.props.link)
+		setTimeout(()=>{
+			this.props.navigate(this.props.link)
+		},1000);
 	}
 
 	render() {
