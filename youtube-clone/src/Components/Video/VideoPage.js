@@ -24,6 +24,7 @@ class VideoPage extends Component {
 
 	componentWillMount() {
 		this.loadRec();
+		window.scrollTo(0, 0);
 	}
 
 

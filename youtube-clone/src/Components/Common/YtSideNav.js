@@ -18,11 +18,10 @@ const YtSideNav = () => {
 					<Category icon={"whatshot"} category={"Trending"}/>
 				</Link>
 
-				<Link to="history"
-					style={{textDecoration:"none"}}
-					activeClassName="active" >
-					<Category icon={"restore"} category={"History"}/>
-				</Link>
+				<div className="sidenav-i" style={{cursor:"not-allowed"}} >
+				<i className="material-icons">restore</i>
+				<h6>History</h6>
+				</div>
 
 				<hr />
 
@@ -70,7 +69,7 @@ const YtSideNav = () => {
 				<hr />
 
 				<div style={{display:"flex", justifyContent:"center"}}>
-					<button className="btn btn-primary text-center">Login</button>
+					<button style={{cursor:"not-allowed"}} className="btn btn-primary text-center">Login</button>
 				</div>
 			</div>
 		</div>

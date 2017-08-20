@@ -23,6 +23,10 @@ class SearchLayout extends Component {
 		},1000);
 	}
 
+	componentWillMount() {
+		window.scrollTo(0, 0);
+	}
+
 	render() {
 		const { videos } = this.props;
 		let searchItems = videos.map( (a,i) =>

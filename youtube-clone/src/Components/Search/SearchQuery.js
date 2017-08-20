@@ -7,12 +7,27 @@ class SearchQuery extends PureComponent {
 
 	constructor() {
 		super();
+		this.state = {
+			isLoading: true
+		};
+	}
+
+	implementLoad() {
+		setTimeout(()=>{
+			this.setState({isLoading:false});
+		},1000);
+	}
+
+	componentWillMount() {
+		this.implementLoad();
 	}
 
 	render() {
 		return (
 			<div>
+				{this.state.isLoading ? <div className="loader"></div> :
 				<SearchLayout videos={this.props.query} />
+			}
 			</div>
 		);
 	}

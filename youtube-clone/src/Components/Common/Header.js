@@ -59,10 +59,10 @@ class Header extends Component {
 						</form>
 
 						<div className="yt-nav-right">
-							<i style={{color: "#a0a0a0"}} className="material-icons">file_upload</i>
-							<i style={{color: "#a0a0a0"}} className="material-icons">apps</i>
-							<i style={{color: "#a0a0a0"}} className="material-icons">notifications</i>
-							<i style={{color: "#a0a0a0"}} className="material-icons">person_outline</i>
+							<i style={{color: "#a0a0a0", cursor:"not-allowed"}} className="material-icons">file_upload</i>
+							<i style={{color: "#a0a0a0", cursor:"not-allowed"}} className="material-icons">apps</i>
+							<i style={{color: "#a0a0a0", cursor:"not-allowed"}} className="material-icons">notifications</i>
+							<i style={{color: "#a0a0a0", cursor:"not-allowed"}} className="material-icons">person_outline</i>
 						</div>
 					</nav>
 				</div>
