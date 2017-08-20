@@ -33,7 +33,7 @@ class HomePage extends Component {
 
 	getYoutubeInfo() {
 		const url = "https://www.googleapis.com/youtube/v3/videos";
-		const key = "AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ";
+		const key = apikey;
 		let promise = (videoCategoryId) => axios({
 			method: "GET",
 			url,
