@@ -39,7 +39,7 @@ const VideoItems = (props) =>  {
 
 				<div style={{display:'flex', flexWrap:'wrap', width:'200px'}}>
 					<p style={{fontSize:15, color:"#888888"}}>
-						{convertViews(props.statistics.viewCount)} views {" "}
+						{views()} views {" "}
 						<span style={{fontSize:"20px"}}>&middot;</span>
 						{convertDate(props.snippet.publishedAt)}
 					</p>
